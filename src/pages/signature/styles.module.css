@@ -1,0 +1,150 @@
+.container {
+width: 100vw !important;
+max-width: 100vw !important;
+font-family: 'Poppins', sans-serif !important;
+overflow: hidden;
+}
+.banner {
+        width: 80%;
+        margin: 20px auto;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+
+    .steps{
+        width: 80%;
+        display: flex;
+        margin: 0 auto;
+        margin-left: auto;
+        margin-right:  auto;
+        justify-content: space-between;
+
+    }
+    .step {
+
+        width: 20%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #6F4438;
+        color: #fff;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+    }
+        .p {
+            width: 100%;
+        }
+    
+
+
+
+.frase {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.plans {
+
+            width: 90%;
+            height: max-content;
+            overflow-x: scroll;
+            display: flex;
+            flex-wrap: nowrap;
+            margin-right: auto;
+            margin-left: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+    
+    
+
+}
+.plan:not(:first-of-type) {
+    margin-left: 10px;
+}
+
+    .plan {
+        min-width: 300px;
+        border-radius: 5px;
+
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+
+    }
+
+        .button {
+            width: 40%;
+            margin: 0 auto;
+            display: block;
+            padding: 10px 0px;
+            border: none;
+            border-radius: 20px;
+            background-color: #6F4438;
+            color: #fff;
+
+        }
+
+
+        .h1 {
+            text-align: center;
+            margin-top: 20px;
+
+        }
+
+        .price{
+            color: gray;
+            text-decoration: line-through;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .price_discount{
+            color: #379A3B;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+       .ul {
+            list-style: none;
+            height: 55%;
+        }
+
+            .li {
+                display: flex;
+                align-items: center;
+                width: 90%;
+                margin: 10px auto;
+            }
+
+                .img {
+                    width: 20px;
+                    margin: 0;
+                    margin-right: 10px;
+                }
+           
+
+.howWork {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+  
+

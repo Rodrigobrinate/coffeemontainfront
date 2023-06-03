@@ -1,0 +1,121 @@
+.container {
+
+
+  font-family: 'Poppins', sans-serif !important;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 20%;
+}
+
+    .item {
+        display: flex;
+        width: 90%;
+        margin: 15px auto;
+        flex-direction: row;
+        margin-top: 5px;
+        height: 11vh;
+
+    }
+
+.info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 60%;
+            padding: 10px;
+            margin: 0 auto;
+            
+}
+    .h1 {
+        font-size: 1rem;
+        color: #333;
+        margin: 0;
+    }
+
+    .span{
+        display: flex;
+        justify-content: inherit;
+        color: gray;
+        font-size: 0.8rem;
+        font-weight: 200 !important;
+    }
+    .h2 {
+        font-size: 1rem;
+        color: green;
+        margin: 0;
+        
+    }
+
+
+        
+    .img {
+        height: auto !important;
+        max-width: 10%;
+        display: flex;
+    }
+
+
+.address {
+   margin: 10px 0;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+     .svg {
+        align-self: center;
+     }
+
+     .address_item {
+        margin-top: 10px;
+     }
+
+
+    
+
+
+.addresses {
+    width: 80%;
+    margin: 0 auto;
+    
+}
+@media screen and (max-width: 1060px) {
+    .h3, .h1, .h2 {
+        font-size: .7rem !important;
+    }
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .h3, .h1, .h2 {
+        font-size: .6rem !important;
+    }
+
+    .h1 {
+        font-size: .6rem !important;
+    }
+
+    .item {
+        height: 10%;
+    }
+
+    .info {
+
+    }
+    .img {
+        max-width: 10% !important;
+    }
+
+    
+}
+
+
