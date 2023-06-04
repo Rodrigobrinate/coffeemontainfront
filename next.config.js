@@ -5,6 +5,14 @@ const withTM = require('next-transpile-modules')(['animejs']);
 const nextConfig = {
   port: 3002,
   reactStrictMode: true,
+  env: { 
+    //BACK_EDN_URL: process.env.BACK_EDN_URL, 
+    //BASE_URL: process.env.BASE_URL,
+    PROTOCOL:process.env.PROTOCOL,
+    HOST: process.env.HOST,
+    PORT: process.env.PORT,
+    LOCAL_PORT: process.env.LOCAL_PORT,
+  }, 
   pageExtensions: ['tsx', 'jsx', 'js'],
   typescript: {
     // !! WARN !!

@@ -8,9 +8,13 @@ if (typeof window !== 'undefined') {
   token = localStorage.getItem('token')
   }
 
+  const protocol = process.env.PROTOCOL
+  const host = process.env.HOST
+  const port = process.env.PORT
+
 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
 export default  api = axios.create({
         //baseURL: import.meta.env.VITE_URL,
-        baseURL: "http://187.94.219.205:3000"
+        baseURL: protocol+"://"+host+":"+port
       });
