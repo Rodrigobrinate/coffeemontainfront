@@ -84,7 +84,7 @@ overflow: hidden;
         border: none;
         display: flex;
         flex-direction: column;
-        height: 500px;
+        height: 620px;
 
     }
 
@@ -178,7 +178,7 @@ overflow: hidden;
 
                 .switch {
                     width: 60%;
-                    height: 15%;
+                    height: 10%;
                     margin: 10px auto;
                     background-color: #fff;
                     border-radius: 10px;
@@ -188,6 +188,7 @@ overflow: hidden;
                     font-size: 11pt;
                     font-weight: bold;
                     margin-top: 20px;
+                    padding: 10px;
                 }
 
                 .option {
