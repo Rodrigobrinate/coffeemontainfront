@@ -3,7 +3,7 @@ import jwtDecode from 'jwt-decode';
 
  //import { Container } from './styles';
  import styles from './styles.module.css'
-import { CoffeeOutlined, InboxOutlined, LoginOutlined, Logout, MailOutline, MenuOutlined, People, ShoppingBagOutlined, ShoppingCart } from '@mui/icons-material';
+import { CoffeeOutlined, Handyman, InboxOutlined, LoginOutlined, Logout, MailOutline, MenuOutlined, People, Phone, ShoppingBagOutlined, ShoppingCart } from '@mui/icons-material';
 import { Badge, Button, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import Link from 'next/link';
 
@@ -107,20 +107,20 @@ const Header = () => {
              
             </ListItemButton>
           </ListItem>
-        {['Produto', 'Kits Especiais', 'Assinatura', 'Carrinho', 'Perfil'].map((text, index) => (
+        {['Produto', 'Quem somos', 'Como funciona', 'Contato', 'Perfil'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton href={index == 0
                ? "/home" : index == 1
-                ? "/kits" : index == 2
-                 ? "/signature" : index == 3
+                ? "/quem_somos" : index == 2
+                 ? "/como_funciona" : index == 3
                   ? "/cartpage" : index == 4
                   ? "/profile" : ""}>
               <ListItemIcon>
                 {index === 0 ? <CoffeeOutlined /> : ''}
-                {index === 1 ? <ShoppingBagOutlined /> : ''}
-                {index === 2 ? <CoffeeOutlined /> : ''}
+                {index === 1 ? <People /> : ''}
+                {index === 2 ? <Handyman /> : ''}
                 {index === 3 ? <Badge badgeContent={cartCount} color="error">
-<ShoppingCart /></Badge> : ''}
+<Phone /></Badge> : ''}
                 {index === 4 ? <People /> : ''}
               </ListItemIcon>
               <ListItemText primary={text} />
