@@ -66,12 +66,14 @@ const Signature = () => {
         </div>
 
         <div className={styles.section_1_first}>
-          <img className={styles.center_img} src="" alt="" />
+          <div className={styles.center_img}>
+          <img  src="background.png" width={"100%"} alt="" />
+          </div>
         </div>
 
         <div className={styles.section_1_first}>
           <div className={styles.plan_info}>
-            <img className={styles.plan_image} src="" alt="" />
+            <img className={styles.plan_image} src="./Standard.png" alt="" />
             <div className={styles.info}>
               <h4>Standard</h4>
               <p className={styles.description}>
@@ -82,7 +84,7 @@ const Signature = () => {
             </div>
           </div>
           <div className={styles.plan_info}>
-            <img className={styles.plan_image} src="" alt="" />
+            <img className={styles.plan_image} src="Gurmet.png" alt="" />
             <div className={styles.info}>
               <h4>Gurmet</h4>
               <p className={styles.description}>
@@ -93,7 +95,7 @@ const Signature = () => {
             </div>
           </div>
           <div className={styles.plan_info}>
-            <img className={styles.plan_image} src="" alt="" />
+            <img className={styles.plan_image} src="Premium.png" alt="" />
             <div className={styles.info}>
               <h4>Premium</h4>
               <p className={styles.description}>
@@ -115,7 +117,7 @@ const Signature = () => {
         {signatures?.map((signature: any) => {
           return (
             <div key={signature.id} className={styles.plan} style={{}}>
-              <img className={styles.img_plan} src="" alt="" />
+              <img className={styles.img_plan} src={signature.title+".png"} alt="" />
               <h1 className={styles.h1}>{signature.title}</h1>
               <ul className={styles.features}>
                 {signature?.fatures.map((fature: any) => {

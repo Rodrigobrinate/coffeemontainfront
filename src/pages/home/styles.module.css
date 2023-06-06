@@ -29,6 +29,9 @@ overflow: hidden;
     height: 200px;
     background-color: #FF8383;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
