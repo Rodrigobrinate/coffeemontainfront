@@ -72,8 +72,8 @@ const Header = () => {
 </Link>
 <ul className={styles.ul}>
     <li className={styles.li}><Link className={styles.a} href="/home">Produtos</Link> </li>
-    <li className={styles.li}><Link className={styles.a} href="/home">Kits especiais</Link></li>
-    <li className={styles.li}><Link className={styles.a} href="/signature">Assinatura</Link></li>
+    <li className={styles.li}><Link className={styles.a} href="/quem_somos">Quem somos</Link></li>
+    <li className={styles.li}><Link className={styles.a} href="/como_funciona">Como funciona</Link></li>
     <li className={styles.li}><Link className={styles.a} href="/home">Contato</Link></li>
 
 </ul>
