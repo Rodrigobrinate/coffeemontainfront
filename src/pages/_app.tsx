@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import AOS from "aos";
 
 import "aos/dist/aos.css";
+import { Analytics } from '@mui/icons-material';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 
@@ -28,6 +29,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   </Head>
   <GoogleOAuthProvider clientId="303518279487-uve5mmrp656v3p2nh3v5l5qbtt66207e.apps.googleusercontent.com">
   <Component {...pageProps} />
- 
+  <Analytics />
   </GoogleOAuthProvider></>)
 }
