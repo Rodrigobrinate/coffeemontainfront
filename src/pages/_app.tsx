@@ -24,7 +24,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
   <>
   <Head>
-  <link rel="icon" href="/logo.png" />
+  <link rel="icon" href="/logo_main.png" />
   </Head>
   <GoogleOAuthProvider clientId="303518279487-uve5mmrp656v3p2nh3v5l5qbtt66207e.apps.googleusercontent.com">
   <Component {...pageProps} />
