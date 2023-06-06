@@ -68,7 +68,7 @@ const Header = () => {
       }
     `}</style>
         <Link href='/home'>
-<img src="/logo.png" width={'60px'} alt="logo" />
+<img src="/logo_main.png" width={'60px'} alt="logo" />
 </Link>
 <ul className={styles.ul}>
     <li className={styles.li}><Link className={styles.a} href="/home">Produtos</Link> </li>
@@ -103,7 +103,7 @@ const Header = () => {
       <List>
       <ListItem sx={{textAlign: "center"}} disablePadding>
             <ListItemButton sx={{display: "flex", justifyContent: "center"}}>
-            <img src="/logo.png" width={'60px'} alt="logo" />
+            <img src="/logo_main.png" width={'60px'} alt="logo" />
              
             </ListItemButton>
           </ListItem>
