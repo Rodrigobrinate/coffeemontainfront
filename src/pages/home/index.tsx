@@ -7,6 +7,7 @@ import api from "@/components/api";
 import { toast } from "react-toastify";
 import { colors } from "@mui/material";
 import { features } from "process";
+import Footer from "@/components/Footer/inex";
 
 // You can also use <link> for styles
 // ..
@@ -256,6 +257,8 @@ const Signature = () => {
           </p>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

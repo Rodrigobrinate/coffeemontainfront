@@ -71,7 +71,7 @@ const Header = () => {
 <img src="/logo_main.png" width={'60px'} alt="logo" />
 </Link>
 <ul className={styles.ul}>
-    <li className={styles.li}><Link className={styles.a} href="/home">Produtos</Link> </li>
+    <li className={styles.li}><Link className={styles.a} href="/home">Assinaturas</Link> </li>
     <li className={styles.li}><Link className={styles.a} href="/quem_somos">Quem somos</Link></li>
     <li className={styles.li}><Link className={styles.a} href="/como_funciona">Como funciona</Link></li>
     <li className={styles.li}><Link className={styles.a} href="/home">Contato</Link></li>
@@ -107,7 +107,7 @@ const Header = () => {
              
             </ListItemButton>
           </ListItem>
-        {['Produto', 'Quem somos', 'Como funciona', 'Contato', 'Perfil'].map((text, index) => (
+        {['Assinaturas', 'Quem somos', 'Como funciona', 'Contato', 'Perfil'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton href={index == 0
                ? "/home" : index == 1

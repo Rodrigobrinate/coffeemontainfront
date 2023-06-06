@@ -7,6 +7,7 @@ import api from "@/components/api";
 import { MenuSharp, SettingsSharp } from "@mui/icons-material";
 import { cpf } from 'cpf-cnpj-validator';
 import validator from 'validator';
+import Footer from "@/components/Footer/inex";
 
 const Checkout = () => {
   const [signature, setSignature] = useState([]) as any;
@@ -161,6 +162,8 @@ api.post("/signature/checkout",{
     >Finalizar pedido</button>
     <button className={styles.cancel}>Cancelar</button>
   </div>  </div>
+  <br /><br />
+  <Footer />
    </div>
   );
 };

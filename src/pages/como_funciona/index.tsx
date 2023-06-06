@@ -2,6 +2,7 @@ import Header from "@/components/header";
 import React from "react";
 
  import styles from './styles.module.css';
+import Footer from "@/components/Footer/inex";
 
 const Como_funciona: React.FC = () => {
   return (
@@ -60,6 +61,9 @@ const Como_funciona: React.FC = () => {
       sua jornada de café memorável e conveniente. Junte-se a nós e desfrute de
       uma experiência única de café!
       </div>
+
+<Footer />
+
     </>
   );
 };

@@ -1,6 +1,7 @@
 import Header from "@/components/header";
 import React from "react";
 import styles from './styles.module.css';
+import Footer from "@/components/Footer/inex";
 
 const Quem_somos: React.FC = () => {
   return (
@@ -51,6 +52,7 @@ const Quem_somos: React.FC = () => {
       teremos o prazer de levar até você o sabor e a paixão que tornam o café
       uma das bebidas mais amadas do mundo.
     </div>
+    <Footer />
     </div>
   );
 };
