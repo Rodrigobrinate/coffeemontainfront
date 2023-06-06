@@ -53,6 +53,10 @@ const Header = () => {
     };
 
 
+    function logout(){
+      window.location.href = "/login"
+    }
+
 
   return (
     <div className={styles.container}>
@@ -81,7 +85,10 @@ const Header = () => {
 <ShoppingCart /></Badge>
 </Link>
 &nbsp;
-{!decode ?  <Link className={styles.a} href='/login'>login</Link> : <Link className={styles.a} href='/profile'>{decode.name}</Link>} </div>
+{!decode ?
+  <Link className={styles.a} href='/login'>login</Link> :
+   <Link className={styles.a} href='/profile'>{decode.name}</Link>}
+    &nbsp; <button onClick={logout} ><Logout /></button></div>
 
 
 <div className={styles.menu_mobile}>

@@ -13,8 +13,14 @@ import { features } from "process";
 
 const Signature = () => {
   const [signatures, setSignatures] = React.useState([]) as any;
-  const [isMensal, setIsMensal] = useState(false);
-  const [isMoido, setIsMoido] = useState(false);
+  const [isAnual, setIsAnual] = useState(true);
+  const [isGraos, setIsGraos] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("isAnual", isAnual.toString())
+    localStorage.setItem("isGraos", isGraos.toString())
+
+  }, [isAnual, isGraos])
 
   useEffect(() => {
 
@@ -128,14 +134,14 @@ const Signature = () => {
                   name=""
                   id="anual"
                   onChange={() => {
-                    setIsMensal(!isMensal);
+                    setIsAnual(!isAnual);
                   }}
                 />
                 <div
                   className={styles.option}
                   style={{
-                    background: isMensal ? "#93522E" : "#fff",
-                    color: !isMensal ? "#93522E" : "#fff",
+                    background: isAnual ? "#93522E" : "#fff",
+                    color: !isAnual ? "#93522E" : "#fff",
                   }}
                 >
                   <label htmlFor="anual">Anual</label>
@@ -143,8 +149,8 @@ const Signature = () => {
                 <div
                   className={styles.option}
                   style={{
-                    background: !isMensal ? "#93522E" : "#fff",
-                    color: isMensal ? "#93522E" : "#fff",
+                    background: !isAnual ? "#93522E" : "#fff",
+                    color: isAnual ? "#93522E" : "#fff",
                   }}
                 >
                   <label htmlFor="anual">Mensal</label>
@@ -158,14 +164,14 @@ const Signature = () => {
                   name=""
                   id="moido"
                   onChange={() => {
-                    setIsMoido(!isMoido);
+                    setIsGraos(!isGraos);
                   }}
                 />
                 <div
                   className={styles.option}
                   style={{
-                    background: isMoido ? "#93522E" : "#fff",
-                    color: !isMoido ? "#93522E" : "#fff",
+                    background: isGraos ? "#93522E" : "#fff",
+                    color: !isGraos ? "#93522E" : "#fff",
                   }}
                 >
                   <label htmlFor="moido">Grãos</label>
@@ -173,8 +179,8 @@ const Signature = () => {
                 <div
                   className={styles.option}
                   style={{
-                    background: !isMoido ? "#93522E" : "#fff",
-                    color: isMoido ? "#93522E" : "#fff",
+                    background: !isGraos ? "#93522E" : "#fff",
+                    color: isGraos ? "#93522E" : "#fff",
                   }}
                 >
                   <label htmlFor="moido">Moido</label>
@@ -188,7 +194,7 @@ const Signature = () => {
               <button
                 className={styles.button}
                 onClick={() => {
-                  checkout(signature);
+                  window.location.href = "/checkout/"+signature.id
                 }}
               >
                 Assinar

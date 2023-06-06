@@ -98,58 +98,14 @@ const Profile: React.FC = () => {
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider', width: '80%', margin: "0 auto"}}>
   <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-    <Tab label="Produtos" {...a11yProps(0)} />
+    
     <Tab label="assinaturas" {...a11yProps(1)} />
+    <Tab label="Produtos" {...a11yProps(0)} />
     <Tab label="kits" {...a11yProps(2)} />
   </Tabs>
 </Box>
+
 <TabPanel value={value} index={0}>
-  
-      <TableContainer component={Paper} sx={{ maxWidth: "90%", margin: "0 auto" }}>
-        <Table sx={{ minWidth: 650, }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell>Produto</TableCell>
-              <TableCell align="center">Quantidade</TableCell>
-              <TableCell align="center">Preço</TableCell>
-              <TableCell align="center">Status</TableCell>
-              <TableCell align="center">Horário</TableCell>
-              <TableCell align="center">Ação</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-
-            {orders.map((row: any) => {
-              let color = "#1ba11bd8" as string;
-              if (row.status == "aguardando pagamento") {
-                color = "#bd1e1ec0";
-              }
-
-
-              return (
-                <TableRow
-                  key={row.id}
-                >
-                  <TableCell component="th" scope="row">
-                    {row.product.name}
-                  </TableCell>
-                  <TableCell align="center">{row.quantity}</TableCell>
-                  <TableCell align="center">R$ {row.product.price.toFixed(2).replace(".", ",")}</TableCell>
-                  <TableCell align="center"><Chip label={row.status} color="success" style={{ background: color }} /></TableCell>
-                  <TableCell align="center">{new Date(row.createdAt).toLocaleDateString("pt-BR") + " " + new Date(row.createdAt).toLocaleTimeString("pt-BR")}</TableCell>
-                  <TableCell align="center">
-                    {row.status == "aguardando pagamento" ? 
-                    <Button onClick={() => {payProduct(row)}}  variant="contained"> <AttachMoney />  Pagar</Button> 
-                    : <Button variant="contained" disabled>Pagar</Button>}
-                    </TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-</TabPanel>
-<TabPanel value={value} index={1}>
 <TableContainer component={Paper} sx={{ maxWidth: "90%", margin: "0 auto" }}>
         <Table sx={{ minWidth: 650, }} aria-label="simple table">
           <TableHead>
@@ -199,6 +155,54 @@ const Profile: React.FC = () => {
         </Table>
       </TableContainer>
 </TabPanel>
+
+<TabPanel value={value} index={1}>
+  
+      <TableContainer component={Paper} sx={{ maxWidth: "90%", margin: "0 auto" }}>
+        <Table sx={{ minWidth: 650, }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Produto</TableCell>
+              <TableCell align="center">Quantidade</TableCell>
+              <TableCell align="center">Preço</TableCell>
+              <TableCell align="center">Status</TableCell>
+              <TableCell align="center">Horário</TableCell>
+              <TableCell align="center">Ação</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+
+            {orders.map((row: any) => {
+              let color = "#1ba11bd8" as string;
+              if (row.status == "aguardando pagamento") {
+                color = "#bd1e1ec0";
+              }
+
+
+              return (
+                <TableRow
+                  key={row.id}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.product.name}
+                  </TableCell>
+                  <TableCell align="center">{row.quantity}</TableCell>
+                  <TableCell align="center">R$ {row.product.price.toFixed(2).replace(".", ",")}</TableCell>
+                  <TableCell align="center"><Chip label={row.status} color="success" style={{ background: color }} /></TableCell>
+                  <TableCell align="center">{new Date(row.createdAt).toLocaleDateString("pt-BR") + " " + new Date(row.createdAt).toLocaleTimeString("pt-BR")}</TableCell>
+                  <TableCell align="center">
+                    {row.status == "aguardando pagamento" ? 
+                    <Button onClick={() => {payProduct(row)}}  variant="contained"> <AttachMoney />  Pagar</Button> 
+                    : <Button variant="contained" disabled>Pagar</Button>}
+                    </TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </TableContainer>
+</TabPanel>
+
 <TabPanel value={value} index={2}>
 <TableContainer component={Paper} sx={{ maxWidth: "90%", margin: "0 auto" }}>
         <Table sx={{ minWidth: 650, }} aria-label="simple table">

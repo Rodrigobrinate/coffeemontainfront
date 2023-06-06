@@ -1,0 +1,116 @@
+.form {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #ebebeb9f;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.input {
+  padding: 10px 20px;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.ordem {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ebebeb9f;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.label {
+  color: #c6c6c6;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.ordem_data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ordem_title {
+  margin: 10px auto;
+}
+
+.finish {
+  width: 80%;
+  margin: 10px auto;
+  padding: 20px 10px;
+  background-color: #93522e;
+  color: #fff;
+  display: block;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  font-size: large;
+}
+
+.cancel {
+  width: 80%;
+  margin: 10px auto;
+  padding: 20px 10px;
+  background-color: #fff;
+  color: #93522e;
+  display: block;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  font-size: large;
+}
+
+.validation {
+margin-top: 100px;
+list-style: none;
+margin-bottom: 10px;
+}
+
+.validation_item {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+  }
+
+  .ordem {
+    width: 25%;
+    height: max-content;
+  }
+
+  .form {
+    width: 60%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .input {
+    width: 40%;
+    margin-left: 10px;
+    height: 40px;
+  }
+  .input,
+  .label {
+    margin-top: 20px;
+  }
+
+  .finish {
+    width: 30%;
+    height: 10%;
+  }
+  .cancel {
+    width: 30%;
+    height: 10%;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import styles from './styles.module.css'
 import { GoogleOAuthProvider } from '@react-oauth/google';
@@ -23,6 +23,13 @@ const Login= () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false);
+
+
+  useEffect(() => {
+console.log(document.referrer)
+
+
+  },[])
  
 
   const responseMessage = (response: any) => {
@@ -35,7 +42,12 @@ const Login= () => {
                     }).then((res) => {
                       console.log(res.data.token.access_token);
                       localStorage.setItem('token', res.data.token.access_token);
-                      window.location.href = '/profile';
+                      if (document.referrer){
+                        window.location.href = document.referrer
+                      }else {
+                        window.location.href = '/home';
+                      }
+                      
                   })
 
 };
@@ -80,9 +92,11 @@ const handleSubmit = (e: any) => {
     <input className={styles.input} onChange={(e) => {setEmail(e.target.value)}} type="text" />
     <label className={styles.label} htmlFor="">Senha</label>
     <input className={styles.input} onChange={(e) => {setPassword(e.target.value)}} type={showPassword ? "text" :  "password"} />
-    <span>
+    <span style={{justifyContent: "space-between", display: "flex"}}>
+      <span>
     <input className={styles.input_show_pass} onChange={()=> {setShowPassword(!showPassword)}} type="checkbox" name="" id="showpass" />
-    <label className={styles.label_show_pass} htmlFor="showpass">Mostar senha</label>
+    <label className={styles.label_show_pass} htmlFor="showpass">Mostar senha</label></span>
+    <Link href={"send_email"} style={{color: "blue", textDecoration: "underline"}}>esqueceu a senha ?</Link>
     </span>
     <button className={styles.submit} onClick={handleSubmit}>Entrar</button>
     <br />
