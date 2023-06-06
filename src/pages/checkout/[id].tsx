@@ -8,7 +8,7 @@ import { MenuSharp, SettingsSharp } from "@mui/icons-material";
 import { cpf } from 'cpf-cnpj-validator';
 import validator from 'validator';
 
-const checkout: React.FC = () => {
+const Checkout = () => {
   const [signature, setSignature] = useState([]) as any;
   const [isAnual, setIsAnual] = useState(false) as any
   const [isGraos, setIsGraos] = useState(false) as any
@@ -165,4 +165,4 @@ api.post("/signature/checkout",{
   );
 };
 
-export default checkout;
+export default Checkout;

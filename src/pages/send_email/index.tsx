@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 // import { Container } from './styles';
 
-const send_email: React.FC = () => {
+const Send_email = () => {
     const [email, setEmail] = useState('')
     const [info, setInfo] = useState("")
 
@@ -47,4 +47,4 @@ const send_email: React.FC = () => {
   );
 }
 
-export default send_email;
+export default Send_email;
