@@ -19,7 +19,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       offset: 320,
     });
 
-  },[])
+  },[]) 
 
 
   return (
