@@ -1,26 +1,36 @@
 import api from '@/components/api';
 import Header from '@/components/header';
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 // import { Container } from './styles';
 
 const Send_email = () => {
     const [email, setEmail] = useState('')
     const [info, setInfo] = useState("")
+ 
 
  function send(){
 
 
     api.post("email_verify",{
         email
-    }).then((reponse) => {
+    }).then((response) => {
+        toast.success(response.data)
         setInfo("email enviado com sucesso, verifique sua caixa de email")
+    }).catch((err) => {
+        toast.error(err.response.data.message)
     })
 
  }
 
+ 
+
+
+
   return (
     <div>
+        <ToastContainer />
         <Header />
         <label htmlFor="" style={{fontWeight: "bold", width: "80%",textAlign: "center",display:"block",  margin: "0 auto"}}>Digite seu E-mail</label>
         <br />

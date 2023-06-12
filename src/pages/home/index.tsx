@@ -18,14 +18,11 @@ const Signature = () => {
   const [isGraos, setIsGraos] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem("isAnual", isAnual.toString())
-    localStorage.setItem("isGraos", isGraos.toString())
-
-  }, [isAnual, isGraos])
+    localStorage.setItem("isAnual", isAnual.toString());
+    localStorage.setItem("isGraos", isGraos.toString());
+  }, [isAnual, isGraos]);
 
   useEffect(() => {
-
-
     api
       .get("/signature")
       .then((response) => {
@@ -68,7 +65,7 @@ const Signature = () => {
 
         <div className={styles.section_1_first}>
           <div className={styles.center_img}>
-          <img  src="background.png" width={"100%"} alt="" />
+            <img src="background.png" width={"100%"} alt="" />
           </div>
         </div>
 
@@ -115,94 +112,100 @@ const Signature = () => {
       <h1 className={styles.frase}>Conheça nossos planos</h1>
 
       <div className={styles.plans}>
-        {signatures?.map((signature: any) => {
+        {signatures?.map((signature: any, i: number) => {
           return (
-            <div key={signature.id} className={styles.plan} style={{}}>
-              <img className={styles.img_plan} src={signature.title+".png"} alt="" />
-              <h1 className={styles.h1}>{signature.title}</h1>
-              <ul className={styles.features}>
-                {signature?.fatures.map((fature: any) => {
-                  return (
-                    <li className={styles.feature} key={fature.id}>
-                      {fature.name}
-                    </li>
-                  );
-                })}
-              </ul>
-
-              <div className={styles.switch}>
-                <input
-                  type="checkbox"
-                  hidden
-                  name=""
-                  id="anual"
-                  onChange={() => {
-                    setIsAnual(!isAnual);
-                  }}
+            <>
+              <div key={signature.id} className={styles.plan} style={{}}>
+                {" "}
+                {i == 1 ? <div className={styles.best}>Mais escolido</div> : ""}
+                <img
+                  className={styles.img_plan}
+                  src={signature.title + ".png"}
+                  alt=""
                 />
-                <div
-                  className={styles.option}
-                  style={{
-                    background: isAnual ? "#93522E" : "#fff",
-                    color: !isAnual ? "#93522E" : "#fff",
+                <h1 className={styles.h1}>{signature.title}</h1>
+                <ul className={styles.features}>
+                  {signature?.fatures.map((fature: any) => {
+                    return (
+                      <li className={styles.feature} key={fature.id}>
+                        {fature.name}
+                      </li>
+                    );
+                  })}
+                </ul>
+                <div className={styles.switch}>
+                  <input
+                    type="checkbox"
+                    hidden
+                    name=""
+                    id="anual"
+                    onChange={() => {
+                      setIsAnual(!isAnual);
+                    }}
+                  />
+                  <div
+                    className={styles.option}
+                    
+                    style={{
+                      background: isAnual ? "#93522E" : "#fff",
+                      color: !isAnual ? "#93522E" : "#fff",
+                    }}
+                  >
+                    <label className={styles.switch_label}  htmlFor="anual">Anual</label>
+                  </div>
+                  <div
+                    className={styles.option}
+                    style={{
+                      background: !isAnual ? "#93522E" : "#fff",
+                      color: isAnual ? "#93522E" : "#fff",
+                    }}
+                  >
+                    <label className={styles.switch_label} htmlFor="anual">Mensal</label>
+                  </div>
+                </div>
+                <div className={styles.switch}>
+                  <input
+                    type="checkbox"
+                    hidden
+                    name=""
+                    id="moido"
+                    onChange={() => {
+                      setIsGraos(!isGraos);
+                    }}
+                  />
+                  <div
+                    className={styles.option}
+                    
+                    style={{
+                      background: isGraos ? "#93522E" : "#fff",
+                      color: !isGraos ? "#93522E" : "#fff",
+                    }}
+                  >
+                    <label className={styles.switch_label} htmlFor="moido">Grãos</label>
+                  </div>
+                  <div
+                    className={styles.option}
+                    style={{
+                      background: !isGraos ? "#93522E" : "#fff",
+                      color: isGraos ? "#93522E" : "#fff",
+                    }}
+                  >
+                    <label className={styles.switch_label} htmlFor="moido">Moido</label>
+                  </div>
+                </div>
+                <h1 className={styles.price_discount}>
+                  R$ {signature.price.toFixed(2).replace(".", ",")}
+                </h1>
+                <button
+                  className={styles.button}
+                  onClick={() => {
+                    window.location.href = "/checkout/" + signature.id;
                   }}
                 >
-                  <label htmlFor="anual">Anual</label>
-                </div>
-                <div
-                  className={styles.option}
-                  style={{
-                    background: !isAnual ? "#93522E" : "#fff",
-                    color: isAnual ? "#93522E" : "#fff",
-                  }}
-                >
-                  <label htmlFor="anual">Mensal</label>
-                </div>
+                  Assinar
+                </button>
               </div>
-
-              <div className={styles.switch}>
-                <input
-                  type="checkbox"
-                  hidden
-                  name=""
-                  id="moido"
-                  onChange={() => {
-                    setIsGraos(!isGraos);
-                  }}
-                />
-                <div
-                  className={styles.option}
-                  style={{
-                    background: isGraos ? "#93522E" : "#fff",
-                    color: !isGraos ? "#93522E" : "#fff",
-                  }}
-                >
-                  <label htmlFor="moido">Grãos</label>
-                </div>
-                <div
-                  className={styles.option}
-                  style={{
-                    background: !isGraos ? "#93522E" : "#fff",
-                    color: isGraos ? "#93522E" : "#fff",
-                  }}
-                >
-                  <label htmlFor="moido">Moido</label>
-                </div>
-              </div>
-
-              <h1 className={styles.price_discount}>
-                R$ {signature.price.toFixed(2).replace(".", ",")}
-              </h1>
-
-              <button
-                className={styles.button}
-                onClick={() => {
-                  window.location.href = "/checkout/"+signature.id
-                }}
-              >
-                Assinar
-              </button>
-            </div>
+            </>
           );
         })}
       </div>
@@ -221,7 +224,7 @@ const Signature = () => {
       </section>
 
       <section className={styles.section} data-aos="fade-up">
-        <div className={styles.section_text} >
+        <div className={styles.section_text}>
           <h2 className={styles.section_title}>Sinta a energia</h2>
 
           <p className={styles.section_description}>
