@@ -152,12 +152,12 @@ api.post("/signature/checkout",{
         <li className={styles.validation_item} style={{color: cpfValid ? 'green' : 'red'}}>{cpfValid ? '' : 'cpf inválido'}</li>
         <li className={styles.validation_item} style={{color: phoneValid ? 'green' : 'red'}}>{phoneValid ? '' : 'Telefone inválido'}</li>
         <li className={styles.validation_item} 
-        style={{color: street?.length > 0 && city.length > 0 && number.length > 0 && neighborhood.length > 0 ? 'green' : 'red'}}>
-            {street?.length > 0 && city.length > 0 && number.length > 0 && neighborhood.length > 0 ? '' : 'preencha todos os campos'  }</li>
+        style={{color: street?.length > 0 && city?.length > 0 && number?.length > 0 && neighborhood?.length > 0 ? 'green' : 'red'}}>
+            {street?.length > 0 && city?.length > 0 && number?.length > 0 && neighborhood?.length > 0 ? '' : 'preencha todos os campos'  }</li>
      </ul>
     
     <button className={styles.finish} 
-    style={{opacity: cpfValid && phoneValid && street?.length > 0 && city.length > 0 && number.length > 0 && neighborhood.length > 0 ? 1 : 0.2}}
+    style={{opacity: cpfValid && phoneValid && street?.length > 0 && city?.length > 0 && number?.length > 0 && neighborhood?.length > 0 ? 1 : 0.2}}
     onClick={checkout}
     >Finalizar pedido</button>
     <button className={styles.cancel}>Cancelar</button>
