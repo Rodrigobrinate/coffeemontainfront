@@ -7,7 +7,9 @@ import api from "@/components/api";
 import { toast } from "react-toastify";
 import { colors } from "@mui/material";
 import { features } from "process";
-import Footer from "@/components/Footer/inex";
+import Footer from "@/components/Footer/index";
+import Price from "@/components/Prices/index"
+import Faq from "@/components/Faq";
 
 // You can also use <link> for styles
 // ..
@@ -51,24 +53,24 @@ const Signature = () => {
       });
   }
 
-  return (
+  return ( 
     <div className={styles.container}>
       <Header />
 
       <div className={styles.section_1}>
         <div className={styles.section_1_first}>
-          <h2 className={styles.title}>
+          <h2 className={styles.title+ ' text-3xl'}>
             Transformando a rotina em um momento de prazer
           </h2>
-          <p className={styles.description}>
+          <p className={styles.description+ "text-sm text-gray-400"}>
             levamos o café dos sonhos até a sua porta, tornando cada manhã uma
             experiência de comodidade e sabor.
           </p>
         </div>
 
         <div className={styles.section_1_first}>
-          <div className={styles.center_img}>
-          <img  src="background.png" width={"100%"} alt="" />
+          <div className={`${styles.center_img}`}>
+          <img src="background.png" width={"100%"} alt="" />
           </div>
         </div>
 
@@ -87,7 +89,7 @@ const Signature = () => {
           <div className={styles.plan_info}>
             <img className={styles.plan_image} src="Gurmet.png" alt="" />
             <div className={styles.info}>
-              <h4>Gurmet</h4>
+              <h4 className="">Gurmet</h4>
               <p className={styles.description}>
                 Uma combinação perfeita de qualidade e sabor. Grãos premium
                 selecionados para uma experiência sofisticada e encorpada,
@@ -113,6 +115,10 @@ const Signature = () => {
       <div></div>
 
       <h1 className={styles.frase}>Conheça nossos planos</h1>
+
+
+      <Price signatures={signatures} />
+
 
       <div className={styles.plans}>
         {signatures?.map((signature: any) => {
@@ -257,6 +263,14 @@ const Signature = () => {
           </p>
         </div>
       </section>
+
+
+<Faq />
+
+
+
+
+
 
       <Footer />
     </div>

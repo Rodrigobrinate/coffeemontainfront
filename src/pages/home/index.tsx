@@ -7,7 +7,7 @@ import api from "@/components/api";
 import { toast } from "react-toastify";
 import { colors } from "@mui/material";
 import { features } from "process";
-import Footer from "@/components/Footer/inex";
+import Footer from "@/components/Footer/index";
 
 // You can also use <link> for styles
 // ..
@@ -57,6 +57,7 @@ const Signature = () => {
           <h2 className={styles.title}>
             Transformando a rotina em um momento de prazer
           </h2>
+      
           <p className={styles.description}>
             levamos o café dos sonhos até a sua porta, tornando cada manhã uma
             experiência de comodidade e sabor.

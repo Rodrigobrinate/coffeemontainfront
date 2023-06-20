@@ -22,6 +22,7 @@ overflow: hidden;
 
 .title {
     margin-top: 50px;
+    font-weight: bold;
 }
 
 .center_img {
@@ -60,7 +61,7 @@ overflow: hidden;
 
 
 .plans {
-
+    display: none !important;
             width: 60%;
             height: 600px;
             display: flex;
@@ -153,6 +154,7 @@ overflow: hidden;
 
         }
         .frase{
+            display: none !important;
             width: max-content;
             margin: 100px auto;
         }
