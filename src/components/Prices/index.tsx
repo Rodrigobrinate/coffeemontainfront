@@ -74,7 +74,7 @@ export default  function Prices(props: {signatures: any}) {
                             
                             return(
                             
-                           <Price item={item} idx={idx} />
+                           <Price key={idx} item={item} idx={idx} />
                         )
                             })
                     }

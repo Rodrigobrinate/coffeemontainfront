@@ -1,6 +1,8 @@
+import jwtDecode from "jwt-decode";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-const Menu = (props) => {
+const Menu = (props:any) => {
     const { children, items } = props
     const [isOpened, setIsOpened] = useState(false)
     return (
@@ -19,16 +21,16 @@ const Menu = (props) => {
                 isOpened ? (
                     <ul className="mx-4 px-2 border-l text-sm font-medium">
                         {
-                            items.map((item, idx) => (
+                            items.map((item:any, idx: any) => (
                                 <li key={idx}>
-                                    <a href={item.href} className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150">
+                                    <Link href={item.href} className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150">
                                         {
                                             item.icon ? (
                                                 <div className="text-gray-500">{item.icon}</div>
                                             ) : ""
                                         }
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))
                         }
@@ -43,7 +45,7 @@ const Sidebar = () => {
 
     const navigation = [
         {
-            href: 'javascript:void(0)',
+            href: '/admin/dashboard/overview',
             name: 'Overview',
             icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
@@ -98,27 +100,36 @@ const Sidebar = () => {
 
     const nestedNav = [{ name: "Cards", href: "javascript:void(0)", icon: "" }, { name: "Chekouts", href: "javascript:void(0)", icon: "" }, { name: "Payments", href: "javascript:void(0)", icon: "" }, { name: "Get paid", href: "javascript:void(0)", icon: "" }]
 
-    const profileRef = useRef()
+    const profileRef = useRef() as any
 
     const [isProfileActive, setIsProfileActive] = useState(false)
+    const [decode, setDecode] = useState('') as any
 
     useEffect(() => {
-        const handleProfile = (e) => {
+        const handleProfile = (e: any) => {
             if (profileRef.current && !profileRef.current.contains(e.target)) setIsProfileActive(false)
         }
         document.addEventListener('click', handleProfile)
+
+
+        if (localStorage.getItem("token") ){
+            //setToken(localStorage.getItem('token'))
+        setDecode(jwtDecode(localStorage.getItem("token") as string))
+        }
+
+
     }, [])
 
     return (
         <>
             <nav
-                className="fixed top-0 left-0 w-full h-full border-r bg-white space-y-8 sm:w-80">
-                <div class="flex flex-col h-full px-4">
+                className="top-0 fixed  left-0 w-full h-full border-r bg-white space-y-8 sm:w-80">
+                <div className="flex flex-col h-full px-4">
                     <div className='h-20 flex items-center pl-2'>
                         <div className="w-full flex items-center gap-x-4">
                             <img src="https://randomuser.me/api/portraits/women/79.jpg" className="w-10 h-10 rounded-full" />
                             <div>
-                                <span className="block text-gray-700 text-sm font-semibold">Alivika tony</span>
+                                <span className="block text-gray-700 text-sm font-semibold">{decode.name}</span>
                                 <span
                                     className="block mt-px text-gray-600 text-xs"
                                 >
@@ -138,9 +149,9 @@ const Sidebar = () => {
                                         <div className="absolute z-10 top-12 right-0 w-64 rounded-lg bg-white shadow-md border text-sm text-gray-600">
                                             <div className="p-2 text-left">
                                                 <span className="block text-gray-500/80 p-2">alivika@gmail.com</span>
-                                                <a href="javascript:void(0)" className="block w-full p-2 text-left rounded-md hover:bg-gray-50 active:bg-gray-100 duration-150">
+                                                <Link href="javascript:void(0)" className="block w-full p-2 text-left rounded-md hover:bg-gray-50 active:bg-gray-100 duration-150">
                                                     Add another account
-                                                </a>
+                                                </Link>
                                                 <div className="relative rounded-md hover:bg-gray-50 active:bg-gray-100 duration-150">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 absolute right-1 inset-y-0 my-auto pointer-events-none">
                                                         <path fillRule="evenodd" d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z" clipRule="evenodd" />
@@ -166,10 +177,10 @@ const Sidebar = () => {
                             {
                                 navigation.map((item, idx) => (
                                     <li key={idx}>
-                                        <a href={item.href} className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150">
+                                        <Link href={item.href} className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150">
                                             <div className="text-gray-500">{item.icon}</div>
                                             {item.name}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))
                             }
@@ -187,10 +198,10 @@ const Sidebar = () => {
                                 {
                                     navsFooter.map((item, idx) => (
                                         <li key={idx}>
-                                            <a href={item.href} className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150">
+                                            <Link href={item.href} className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150">
                                                 <div className="text-gray-500">{item.icon}</div>
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     )) 
                                 }    

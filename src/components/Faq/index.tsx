@@ -86,6 +86,7 @@ export default function Faq()  {
                 {
                     faqsList.map((item, idx) => (
                         <FaqsCard
+                            key={idx}
                             idx={idx}
                             faqsList={item}
                         />

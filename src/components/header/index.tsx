@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import jwtDecode from 'jwt-decode';
+import Link from 'next/link';
 
 const dropdownNavs = [
     {
@@ -106,14 +107,14 @@ export default function Header()  {
             <nav className={`relative z-20 bg-white w-full md:static md:text-sm md:border-none ${state ? "shadow-lg rounded-b-xl md:shadow-none" : ""}`}>
                 <div className="items-center gap-x-14 px-4 max-w-screen-xl mx-auto md:flex md:px-8">
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <a href="javascript:void(0)">
+                        <Link href="javascript:void(0)">
                             <img
                                 src="/logo_main.png"
                                 width={60}
                                 height={50}
                                 alt="Float UI logo"
                             />
-                        </a>
+                        </Link>
                         <div className="md:hidden">
                             <button className="text-gray-500 hover:text-gray-800"
                                 onClick={() => setState(!state)}
@@ -159,9 +160,9 @@ export default function Header()  {
                                                         }
                                                     </button>
                                                 ) : (
-                                                    <a href={item.path} className="block text-gray-700 hover:text-indigo-600">
+                                                    <Link href={item.path} className="block text-gray-700 hover:text-indigo-600">
                                                         {item.title}
-                                                    </a>
+                                                    </Link>
                                                 )
                                             }
                                             {
@@ -174,7 +175,7 @@ export default function Header()  {
                                                                     <ul className='mt-5 space-y-6'>
                                                                         {dropdownItem.navs.map((navItem: any, idx: any) => (
                                                                             <li key={idx} className="group">
-                                                                                <a href={navItem.path} className='flex gap-3 items-center'>
+                                                                                <Link href={navItem.path} className='flex gap-3 items-center'>
                                                                                     <div className='w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center duration-150 group-hover:bg-indigo-600 group-hover:text-white md:w-14 md:h-14'>
                                                                                         {navItem.icon}
                                                                                     </div>
@@ -182,7 +183,7 @@ export default function Header()  {
                                                                                         <span className="text-gray-800 duration-200 group-hover:text-indigo-600 text-sm font-medium md:text-base">{navItem.title}</span>
                                                                                         <p className='text-sm text-gray-600 group-hover:text-gray-800 mt-1'>{navItem.desc}</p>
                                                                                     </div>
-                                                                                </a>
+                                                                                </Link>
                                                                             </li>
                                                                         ))}
                                                                     </ul>
@@ -200,14 +201,14 @@ export default function Header()  {
                             
                             <div className='flex-1 items-center justify-end gap-x-6 space-y-3 md:flex md:space-y-0'>
                               {!decode ?   <> <li>
-                                    <a href="javascript:void(0)" className="block py-3 text-center text-gray-700 hover:text-amber-800 border rounded-lg md:border-none">
+                                    <Link href="javascript:void(0)" className="block py-3 text-center text-gray-700 hover:text-amber-800 border rounded-lg md:border-none">
                                         Log in
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" className="block py-3 px-4 font-medium text-center text-white bg-amber-900 hover:bg-amber-800 active:bg-amber-700 active:shadow-none rounded-lg shadow md:inline">
+                                    <Link href="javascript:void(0)" className="block py-3 px-4 font-medium text-center text-white bg-amber-900 hover:bg-amber-800 active:bg-amber-700 active:shadow-none rounded-lg shadow md:inline">
                                         Sign in
-                                    </a>
+                                    </Link>
                                 </li>
                            </>
                             :  
@@ -216,7 +217,7 @@ export default function Header()  {
             <img src="/user.png" className="w-12 h-12 rounded-full" />
             <div>
                 <span className="block text-gray-700 text-sm font-medium">{decode.name}</span>
-                <a href="/profile" className="block text-indigo-600 hover:text-indigo-500 text-xs">Ver Perfil</a>
+                <Link href="/profile" className="block text-indigo-600 hover:text-indigo-500 text-xs">Ver Perfil</Link>
             </div>
         </div></>
 

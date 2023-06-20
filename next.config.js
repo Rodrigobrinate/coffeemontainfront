@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const withTM = require('next-transpile-modules')(['animejs']);
+
 
 const nextConfig = {
   port: 3002,
@@ -26,27 +26,7 @@ const nextConfig = {
   },
 }
 
- withTM({
-  webpack: (config) => {
-    // configure o webpack para transpilar a biblioteca animejs
-    config.module.rules.push({
-      test: /\.js$/,
-      include: /node_modules\/animejs/,
-      ignoreBuildErrors: true,
-      typescript: {
-        page: true
-      },
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env']
-        }
-      }
-    });
 
-    return config;
-  }
-});
 
 //module.exports = withTM(nextConfig)
 module.exports = nextConfig

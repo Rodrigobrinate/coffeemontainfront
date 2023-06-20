@@ -9,7 +9,7 @@ import { ArrowRight, Delete, KeyboardDoubleArrowRight, People, PhoneAndroid } fr
 import AddressModal from '@/components/addressModal';
 import { cpf } from 'cpf-cnpj-validator'; 
 import validator from 'validator';
-import Login from '../login/index_old';
+
 
 const addrespinput = {
     width: "40%", 
@@ -422,7 +422,7 @@ InputProps={{
             p: 4,
           }}
         >
-        <Login route="/cartpage" />
+
         </Box>
       </Modal>
 

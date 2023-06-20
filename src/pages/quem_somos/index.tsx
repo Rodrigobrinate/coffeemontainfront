@@ -1,7 +1,7 @@
 import Header from "@/components/header";
 import React from "react";
 import styles from './styles.module.css';
-import Footer from "@/components/Footer/inex";
+import Footer from "@/components/Footer/index";
 
 const Quem_somos: React.FC = () => {
   return (
