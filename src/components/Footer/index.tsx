@@ -68,7 +68,7 @@ export default function Footer2() {
   ];
 
   return (
-    <footer className="text-gray-500 bg-white px-4 py-5 max-w-screen-xl mx-auto absolute w-full  md:px-8">
+    <footer className="text-gray-500 bg-white px-4 py-5  mx-auto absolute w-full  md:px-8">
       <div className="gap-6 justify-between md:flex">
         <div className="flex-1">
           <div className="max-w-xs">

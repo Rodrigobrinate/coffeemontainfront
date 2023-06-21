@@ -99,7 +99,7 @@ const Checkout = () => {
     <div className={styles.container_page}>
       <Header />
 
-      <div className={"w-5/5 flex m-auto justify-between mx-10 mt-4"}>
+      <div className={"w-5/5 flex flex-col m-auto justify-between mx-10 mt-4 md:flex-row"}>
         <div className={styles.ordem}>
           <div className={styles.ordem_title}>
             <h4>Sua ordem</h4>
@@ -117,37 +117,39 @@ const Checkout = () => {
             </div>
           </div>
         </div>
-        <div className={"bg-white block  pl-4 flex-wrap w-3/5 rounded-md"}>
+        <div className={"bg-white block  pl-4 flex-wrap w-5/5 md:w-3/5 rounded-md  md:flex"}>
           
-          <span className="flex mt-4">
-                    <label className={' w-20 mt-12  ml-4 self-center font-bold text-gray-400 '} htmlFor="">
+          <span className="flex flex-col mt-4 w-5/5 md:w2/4">
+                    <label className={'ml-2 text-gray-500 font-bold'} htmlFor="">
             Nome
           </label>
     
           <input
-            className={' h-max mt-12 rounded-md border-gray-300 border-solid ml-2 w-1/3 h-max '}
+            className={'w-4/5 rounded-md border-gray-300'}
             onChange={(e) => setName(e.target.value)}
             value={name}
             type="text"
           />
-
-          <label className={' w-20 mt-12  ml-4 self-center font-bold text-gray-400 block'} htmlFor="">
+  </span>
+    <span className="flex flex-col mt-4 w-5/5 md:w-2/4">
+          <label className={'ml-2 text-gray-500 font-bold'} htmlFor="">
             Email
           </label>
           <input
-            className={' h-max mt-12 rounded-md border-gray-300 border-solid ml-2 w-1/3 h-max block'}
+            className={'w-4/5 rounded-md border-gray-300'}
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             type="text"
           />
-         </span>
+       </span>
 
-         <span className="flex mt-4">
-            <label className={' w-20 mt-12  ml-4 self-center font-bold text-gray-400 block'} htmlFor="">
+        
+            <span className="flex flex-col w-4/5 md:w-1/5">
+            <label className={'ml-2 mt-2 text-gray-500 font-bold'} htmlFor="">
               CPF
             </label>
             <input
-              className={' h-max mt-12 rounded-md border-gray-300 border-solid ml-2 w-1/3 h-max block'}
+              className={'rounded-md border-gray-300 '}
               onChange={(e) => {
                 setCpfText(e.target.value);
                 cpf.isValid(e.target.value)
@@ -157,13 +159,13 @@ const Checkout = () => {
               value={cpfText}
               type="text"
             />
-        
-          
-            <label className={' w-20 mt-12  ml-4 self-center font-bold text-gray-400 block'} htmlFor="">
+        </span>
+        <span className="flex flex-col w-4/5 md:w-1/5 md:ml-4">
+            <label className={'ml-2 mt-2 text-gray-500 font-bold'} htmlFor="">
               Telefone
             </label>
             <input
-              className={' h-max mt-12 rounded-md border-gray-300 border-solid ml-2 w-1/3 h-max block'}
+              className={'rounded-md border-gray-300'}
               onChange={(e) => {
                 setPhone(e.target.value);
                 validator.isMobilePhone(e.target.value, "pt-BR")
@@ -172,52 +174,58 @@ const Checkout = () => {
               }}
               value={phone}
               type="text"
-            />
+            /></span>
 
-          </span>
-          <span className="flex mt-4">
-              <label className={' w-20 mt-12  ml-4 self-center font-bold text-gray-400 block'} htmlFor="">
+       
+         
+          <span className="flex flex-col w-4/5 md:w-2/4 md:ml-4 ">
+              <label className={'ml-2 mt-2 text-gray-500 font-bold'} htmlFor="">
                 Endereço
               </label>
               <input
-                className={' h-max mt-12 rounded-md border-gray-300 border-solid ml-2 w-1/3 block w-2/5'  }
+                className={'rounded-md border-gray-300 w-5/5'}
                 onChange={(e) => setStreet(e.target.value)}
                 value={street}
                 type="text"
               />
-            
+            </span>
 
-         
-            <label className={' w-20 mt-12  ml-4 self-center font-bold text-gray-400 block'} htmlFor="">
+            <span className="flex flex-col w-4/5 md:w-1/5 md:ml-2">
+            <label className={'ml-2 mt-2 text-gray-500 font-bold'} htmlFor="">
               Número
             </label>
             <input
-              className={' h-max mt-12 rounded-md border-gray-300 border-solid ml-2 w-1/3 block'}
+              className={' rounded-md border-gray-300 w-5/5'}
               onChange={(e) => setNumber(e.target.value)}
               value={number}
               type="text"
             /></span>
+            
           
-          <span className="flex mt-4">
-            <label className={' w-20 mt-12  ml-4 self-center font-bold text-gray-400 block'} htmlFor="">
+          
+          <span className="flex flex-col w-4/5 md:w-2/5 md:ml-4">
+            <label className={'ml-2 mt-2 text-gray-500 font-bold'} htmlFor="">
               Cidade
             </label>
             <input
-              className={' h-max mt-12 rounded-md border-gray-300 border-solid ml-2 w-1/3 h-max'}
+              className={'rounded-md border-gray-300'}
               onChange={(e) => setCity(e.target.value)}
               value={city}
               type="text"
             />
-  
-            <label className={' w-20 mt-12  ml-4 self-center font-bold text-gray-400 block'} htmlFor="">
+  </span>
+
+  <span className="flex flex-col w-4/5 md:w-4/5 ">
+            <label className={'ml-2 mt-2 text-gray-500 font-bold'} htmlFor="">
               Bairro
             </label>
             <input
-              className={' h-max mt-12 rounded-md border-gray-300 border-solid ml-2 w-1/3 h-max block'}
+              className={' rounded-md border-gray-300'}
               onChange={(e) => setNeighborhood(e.target.value)}
               value={neighborhood}
               type="text"
             /></span>
+            
           <ul className={styles.validation}>
             <li
               className={styles.validation_item}
@@ -253,7 +261,7 @@ const Checkout = () => {
           </ul>
 
           <button
-            className={styles.finish}
+            className={"align-middle items-center flex justify-center text-center h-12 bg-amber-950 w-2/5 rounded-md font-bold text-white"}
             style={{
               opacity:
                 cpfValid &&
@@ -269,7 +277,7 @@ const Checkout = () => {
           >
             Finalizar pedido
           </button>
-          <button className={styles.cancel}>Cancelar</button>
+          <button className={"align-middle items-center flex justify-center text-center h-12 bg-white-950 w-2/5 rounded-md font-bold text-amber-950"}>Cancelar</button>
         </div>{" "}
       </div>
       <br />
