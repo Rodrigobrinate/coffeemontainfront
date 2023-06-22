@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export default () => {
+export default function Tabs()  {
 
     const tabItems = [
         {

@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 
 // import { Container } from './styles';
 
-const dashboard: React.FC = () => {
+const Dashboard: React.FC = () => {
 
 
   useEffect(() => {
@@ -20,4 +20,4 @@ const dashboard: React.FC = () => {
     );
 }
 
-export default dashboard;
+export default Dashboard;

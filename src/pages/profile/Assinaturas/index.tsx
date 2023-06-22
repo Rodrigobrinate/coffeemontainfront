@@ -7,7 +7,7 @@ import { toast, ToastContainer } from 'react-toastify';
 
 // import { Container } from './styles';
 
-const assinaturas: React.FC = () => {
+const Assinaturas: React.FC = () => {
   const [orderSub, setOrdersSub] = useState([]) as any
 
   useEffect(() => {
@@ -111,4 +111,4 @@ const assinaturas: React.FC = () => {
     );
 }
 
-export default assinaturas;
+export default Assinaturas;

@@ -5,7 +5,7 @@ import Table from '@/components/TableFeatures';
 import Sidebar from '@/components/Sidebar';
 // import { Container } from './styles';
 
-const signature: React.FC = () => {
+const Signature: React.FC = () => {
     const [signature, setSignature] = useState([]) as any
 
     const router = useRouter()
@@ -31,4 +31,4 @@ const signature: React.FC = () => {
   );
 }
 
-export default signature;
+export default Signature;
