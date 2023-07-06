@@ -116,10 +116,10 @@ const Signature = () => {
 
       <h1 className={styles.frase}>Conheça nossos planos</h1>
 
+    <div id="price">
+      <Price  signatures={signatures} />
 
-      <Price signatures={signatures} />
-
-
+</div>
       <div className={styles.plans}>
         {signatures?.map((signature: any) => {
           return (

@@ -3,6 +3,7 @@ width: 100vw !important;
 max-width: 100vw !important;
 font-family: 'Poppins', sans-serif !important;
 overflow: hidden;
+scroll-behavior: smooth;
 }
 
 .section_1 {

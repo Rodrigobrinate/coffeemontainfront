@@ -98,7 +98,8 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #fff
+  background: #fff;
+  scroll-behavior: smooth !important;
 }
 
 a {

@@ -6,40 +6,36 @@ export default function Footer2() {
       label: "Empresa",
       items: [
         {
-          href: "javascript:void()",
+          href: "/patterns",
           name: "Padrões",
         },
         {
-          href: "javascript:void()",
+          href: "https://medium.com/@coffeemountaincaparao",
           name: "Blog",
         },
         {
-          href: "javascript:void()",
+          href: "/Time",
           name: "Time",
-        },
-        {
-          href: "javascript:void()",
-          name: "Carreira",
-        },
+        }
       ],
     },
     {
       label: "Recursos",
       items: [
         {
-          href: "javascript:void()",
+          href: "/contato",
           name: "Contato",
         },
         {
-          href: "javascript:void()",
+          href: "/contato",
           name: "Suporte",
         },
         {
-          href: "javascript:void()",
+          href: "#price",
           name: "Preços",
         },
         {
-          href: "javascript:void()",
+          href: "/about",
           name: "Quem somos",
         },
       ],
@@ -60,7 +56,7 @@ export default function Footer2() {
           name: "privacidade",
         },
         {
-          href: "javascript:void()",
+          href: "/about",
           name: "Sobre nós",
         },
       ],

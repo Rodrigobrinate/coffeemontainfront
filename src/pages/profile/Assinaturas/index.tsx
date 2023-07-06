@@ -27,6 +27,15 @@ const Assinaturas: React.FC = () => {
     })
   }
 
+  function pay(id: number){
+    api.post("signature/orders/pay", {id}).then((response) => {
+        window.location.href =  response.data
+    }
+    ).catch((err) => {
+      toast.error("não foi possível cancelar a assinatura, entre em contato com o suporte")
+    })
+  }
+
 
   return (
   <div>
@@ -35,25 +44,8 @@ const Assinaturas: React.FC = () => {
     <ToastContainer />
 
     <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-            <div className="items-start justify-between md:flex">
-                <div className="max-w-lg">
-                    <h3 className="text-gray-800 text-xl font-bold sm:text-2xl">
-                        All products
-                    </h3>
-                    <p className="text-gray-600 mt-2">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-                <div className="mt-3 md:mt-0">
-                    <a
-                        href="javascript:void(0)"
-                        className="inline-block px-4 py-2 text-white duration-150 font-medium bg-indigo-600 rounded-lg hover:bg-indigo-500 active:bg-indigo-700 md:text-sm"
-                    >
-                        Add product
-                    </a>
-                </div>
-            </div>
-            <div className="mt-12 relative h-max overflow-auto">
+            
+            <div className="mt-2 relative h-max overflow-auto">
                 <table className="w-full table-auto text-sm text-left">
                     <thead className="text-gray-600 font-medium border-b">
                         <tr>
@@ -94,7 +86,7 @@ const Assinaturas: React.FC = () => {
                                             Cancelar
                                         </button>: ""}
                                         {item.status == "aguardando pagamento" ?
-                                        <button onClick={()=> {cancel(item.id)}}  className="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">
+                                        <button onClick={()=> {pay(item.id)}}  className="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">
                                             Pagar
                                         </button>: ""}
                                     </td>
