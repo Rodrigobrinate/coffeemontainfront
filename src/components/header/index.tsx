@@ -73,7 +73,7 @@ export default function Header()  {
 
     // Replace javascript:void(0) paths with your paths
     const navigation = [
-        { title: "Features", path: "javascript:void(0)", isDrapdown: true, navs: dropdownNavs },
+        { title: "Features", path: "/", isDrapdown: true, navs: dropdownNavs },
         { title: "Assinaturas", path: "/", isDrapdown: false },
         { title: "sobre nós", path: "/about", isDrapdown: false },
         { title: "blog", path: "https://medium.com/@coffeemountaincaparao", isDrapdown: false }
@@ -191,12 +191,12 @@ export default function Header()  {
                             
                             <div className='flex-1 items-center justify-end gap-x-6 space-y-3 md:flex md:space-y-0'>
                               {!decode ?   <> <li>
-                                    <Link href="javascript:void(0)" className="block py-3 text-center text-gray-700 hover:text-amber-800 border rounded-lg md:border-none">
+                                    <Link href="/" className="block py-3 text-center text-gray-700 hover:text-amber-800 border rounded-lg md:border-none">
                                         Log in
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="javascript:void(0)" className="block py-3 px-4 font-medium text-center text-white bg-amber-900 hover:bg-amber-800 active:bg-amber-700 active:shadow-none rounded-lg shadow md:inline">
+                                    <Link href="/" className="block py-3 px-4 font-medium text-center text-white bg-amber-900 hover:bg-amber-800 active:bg-amber-700 active:shadow-none rounded-lg shadow md:inline">
                                         Sign in
                                     </Link>
                                 </li>

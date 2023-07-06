@@ -66,6 +66,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta itemProp="name" content="Título da página" />
         <meta itemProp="description" content="Clube de Assinatura de Café Especial - Descubra uma experiência sensorial única com nosso clube de assinatura de café especial. Delicie-se com grãos cuidadosamente selecionados e torrados artesanalmente, provenientes das melhores origens do mundo. Desfrute de notas de sabor exclusivas e mergulhe na riqueza aromática de cada xícara. Assine mensalmente e receba em sua casa uma seleção premium de cafés gourmet. Experimente a paixão pelo café especial em cada gole." />
         <meta itemProp="image" content="/logo_main.png" />
+        <title>Coffee Montain Caparaó</title>
       </Head>
       <GoogleOAuthProvider clientId="303518279487-uve5mmrp656v3p2nh3v5l5qbtt66207e.apps.googleusercontent.com">
         <Component {...pageProps} />
