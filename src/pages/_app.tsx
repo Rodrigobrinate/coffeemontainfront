@@ -63,8 +63,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           content="portifólio Rodrigo Brinate Protazio"
         />
         <meta name="pinterest-rich-pin" content="true" />
-        <meta itemProp="name" content="Título da página" />
+        <meta itemProp="name" content="Coffee Montain Caparaó" />
         <meta itemProp="description" content="Clube de Assinatura de Café Especial - Descubra uma experiência sensorial única com nosso clube de assinatura de café especial. Delicie-se com grãos cuidadosamente selecionados e torrados artesanalmente, provenientes das melhores origens do mundo. Desfrute de notas de sabor exclusivas e mergulhe na riqueza aromática de cada xícara. Assine mensalmente e receba em sua casa uma seleção premium de cafés gourmet. Experimente a paixão pelo café especial em cada gole." />
+        <meta name="description" content="Clube de Assinatura de Café Especial - Descubra uma experiência sensorial única com nosso clube de assinatura de café especial. Delicie-se com grãos cuidadosamente selecionados e torrados artesanalmente, provenientes das melhores origens do mundo. Desfrute de notas de sabor exclusivas e mergulhe na riqueza aromática de cada xícara. Assine mensalmente e receba em sua casa uma seleção premium de cafés gourmet. Experimente a paixão pelo café especial em cada gole." />
         <meta itemProp="image" content="/logo_main.png" />
         <title>Coffee Montain Caparaó</title>
       </Head>
