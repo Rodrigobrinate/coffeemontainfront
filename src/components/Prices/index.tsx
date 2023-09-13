@@ -62,8 +62,9 @@ const [signature2, setsignature2 ]= useState(signatures.filter((item: any) => it
     localStorage.setItem("isAnual", isAnual.toString())
     localStorage.setItem("isGraos", isGraos.toString())
 
-    console.log(signatures.filter((item: any) =>  item.isMoido == true))
-
+    if (signatures){
+    //console.log(signatures.filter((item: any) =>  item.isMoido == true))
+    console.log(isAnual, isGraos,signatures.filter((item: any) => item.isAnual == true && item.isMoido == true))
     if (isAnual && isGraos){
         setsignature2(signatures.filter((item: any) => item.isAnual == true && item.isMoido == false))
     } 
@@ -75,11 +76,11 @@ const [signature2, setsignature2 ]= useState(signatures.filter((item: any) => it
     }
     else if (!isAnual && !isGraos){
         setsignature2(signatures.filter((item: any) => item.isAnual == false && item.isMoido == true))
-    }
+    }}
 
 
 
-   },[isAnual, isGraos])
+   },[isAnual, isGraos, signatures])
 
 
 
@@ -123,6 +124,7 @@ const [signature2, setsignature2 ]= useState(signatures.filter((item: any) => it
 </div>
 
                 <div className='mt-16 space-y-6 justify-center gap-6 sm:grid sm:grid-cols-2 sm:space-y-0 lg:grid-cols-3'>
+                    
                     {
                         signature2?.map((item: any, idx: any) => {
                             console.log(plans)

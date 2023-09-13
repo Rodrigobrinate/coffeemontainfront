@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { colors } from "@mui/material";
 import { features } from "process";
 import Footer from "@/components/Footer/index";
-import Price from "@/components/Prices/index"
+import Price from "@/components/Prices/index";
 import Faq from "@/components/Faq";
 
 // You can also use <link> for styles
@@ -20,14 +20,11 @@ const Signature = () => {
   const [isGraos, setIsGraos] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem("isAnual", isAnual.toString())
-    localStorage.setItem("isGraos", isGraos.toString())
-
-  }, [isAnual, isGraos])
+    localStorage.setItem("isAnual", isAnual.toString());
+    localStorage.setItem("isGraos", isGraos.toString());
+  }, [isAnual, isGraos]);
 
   useEffect(() => {
-
-
     api
       .get("/signature")
       .then((response) => {
@@ -53,16 +50,16 @@ const Signature = () => {
       });
   }
 
-  return ( 
+  return (
     <div className={styles.container}>
       <Header />
 
       <div className={styles.section_1}>
         <div className={styles.section_1_first}>
-          <h2 className={styles.title+ ' text-3xl'}>
+          <h2 className={styles.title + " text-3xl"}>
             Transformando a rotina em um momento de prazer
           </h2>
-          <p className={styles.description+ "text-sm text-gray-400"}>
+          <p className={styles.description + "text-sm text-gray-400"}>
             levamos o café dos sonhos até a sua porta, tornando cada manhã uma
             experiência de comodidade e sabor.
           </p>
@@ -70,7 +67,7 @@ const Signature = () => {
 
         <div className={styles.section_1_first}>
           <div className={`${styles.center_img}`}>
-          <img src="background.png" width={"100%"} alt="" />
+            <img src="background.png" width={"100%"} alt="" />
           </div>
         </div>
 
@@ -116,15 +113,18 @@ const Signature = () => {
 
       <h1 className={styles.frase}>Conheça nossos planos</h1>
 
-    <div id="price">
-      <Price  signatures={signatures} /> 
-
-</div>
+      <div id="price">
+        <Price signatures={signatures} />
+      </div>
       <div className={styles.plans}>
         {signatures?.map((signature: any) => {
           return (
             <div key={signature.id} className={styles.plan} style={{}}>
-              <img className={styles.img_plan} src={signature.title+".png"} alt="" />
+              <img
+                className={styles.img_plan}
+                src={signature.title + ".png"}
+                alt=""
+              />
               <h1 className={styles.h1}>{signature.title}</h1>
               <ul className={styles.features}>
                 {signature?.fatures.map((fature: any) => {
@@ -203,7 +203,7 @@ const Signature = () => {
               <button
                 className={styles.button}
                 onClick={() => {
-                  window.location.href = "/checkout/"+signature.id
+                  window.location.href = "/checkout/" + signature.id;
                 }}
               >
                 Assinar
@@ -227,7 +227,7 @@ const Signature = () => {
       </section>
 
       <section className={styles.section} data-aos="fade-up">
-        <div className={styles.section_text} >
+        <div className={styles.section_text}>
           <h2 className={styles.section_title}>Sinta a energia</h2>
 
           <p className={styles.section_description}>
@@ -264,13 +264,7 @@ const Signature = () => {
         </div>
       </section>
 
-
-<Faq />
-
-
-
-
-
+      <Faq />
 
       <Footer />
     </div>
