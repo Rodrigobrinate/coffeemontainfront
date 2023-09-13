@@ -147,7 +147,7 @@ const Checkout = () => {
 
             }else{
               return (
-              <div className="border border-gray-200 p-2 rounded-md mt-2">
+              <div key={item.di} className="border border-gray-200 p-2 rounded-md mt-2">
             <input type="radio" name="frete" onChange={() => {
               setFreteValue(item)
             }} className="mr-2" id={item.id} />
