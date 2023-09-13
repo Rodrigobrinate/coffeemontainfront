@@ -60,6 +60,7 @@ const Checkout = () => {
         setNumber(response.data?.addresses?.[0]?.number);
         setCity(response.data?.addresses?.[0]?.city);
         setNeighborhood(response.data?.addresses?.[0]?.neighborhood);
+        setCep(response.data?.addresses?.[0].zipCode)
       })
       .catch((err: any) => {
         console.log(err.response);
@@ -119,7 +120,7 @@ const Checkout = () => {
   return (
     <div className={styles.container_page}>
       <Header />
-      <button onClick={getCheckout}> teste</button>
+     
       <div
         className={
           "w-5/5 flex flex-col m-auto justify-between mx-10 mt-4 md:flex-row"
@@ -164,7 +165,7 @@ const Checkout = () => {
           : "preencha o cep"}
           
 
-         <p className="mt-2">Total: {(signature.price*1 + (freteValue?.price*1 | 0)).toFixed(2).replace(".", ",")}</p>
+         <p className="mt-2">Total: { isAnual == "true" ? ((signature.price*1 + (freteValue?.price*1 | 0))*12).toFixed(2).replace(".", ",") : (signature.price*1 + (freteValue?.price*1 | 0)).toFixed(2).replace(".", ",")}</p>
         </div>
         <div
           className={
