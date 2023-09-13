@@ -82,8 +82,8 @@ const Assinaturas: React.FC = () => {
                                     <td className="pr-6 py-4 whitespace-nowrap">R$ {item?.signature?.price.toFixed(2).replace(".", ",")}</td>
                                     <td className="text-right whitespace-nowrap">
                                       {item.status == "ativo" ||item.status == "active" || item.status == "aguardando entrega" ?
-                                        <button onClick={()=> {cancel(item.id)}} className="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">
-                                            Cancelar
+                                        <button onClick={()=> {window.location.href = "https://billing.stripe.com/p/login/4gw29HaQs5I98QE6oo"}} className="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">
+                                            Gerenciar
                                         </button>: ""}
                                         {item.status == "aguardando pagamento" ?
                                         <button onClick={()=> {pay(item.id)}}  className="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">

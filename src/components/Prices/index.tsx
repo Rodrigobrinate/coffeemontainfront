@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Price from "../Price";
+import { isatty } from "tty";
 
 
     
@@ -51,7 +52,35 @@ import Price from "../Price";
 
 export default  function Prices(props: {signatures: any}) {
 
+    const [isAnual, setIsAnual] = useState(true);
+    const [isGraos, setIsGraos] = useState(false);
+    
+
    const {signatures} = props
+const [signature2, setsignature2 ]= useState(signatures.filter((item: any) => item.isAnual == true))
+   useEffect(() => {
+    localStorage.setItem("isAnual", isAnual.toString())
+    localStorage.setItem("isGraos", isGraos.toString())
+
+    console.log(signatures.filter((item: any) =>  item.isMoido == true))
+
+    if (isAnual && isGraos){
+        setsignature2(signatures.filter((item: any) => item.isAnual == true && item.isMoido == false))
+    } 
+    else if (isAnual && !isGraos){
+        setsignature2(signatures.filter((item: any) => item.isAnual == true && item.isMoido == true))
+    }
+    else if (!isAnual && isGraos){
+        setsignature2(signatures.filter((item: any) => item.isAnual == false && item.isMoido == false))
+    }
+    else if (!isAnual && !isGraos){
+        setsignature2(signatures.filter((item: any) => item.isAnual == false && item.isMoido == true))
+    }
+
+
+
+   },[isAnual, isGraos])
+
 
 
     return (
@@ -67,9 +96,35 @@ export default  function Prices(props: {signatures: any}) {
                         </p>
                     </div>
                 </div>
+
+<div className=" sm:w-4/5 md:w-2/5 h-24 mx-auto border border-gray-400 flex justify-around rounded-md">
+    <button className={`p-2 w-1/2  sm:w-1/2 mx-2 h-4/5 my-auto rounded-md  ${isAnual ? "bg-amber-900 text-white" : "bg-gray-100 text-amber-900"} ` }
+    onClick={()=> {
+        setIsAnual(true)
+        
+    }}
+>Anual</button>
+    <button className={`p-2 w-1/2  sm:w-1/2 mx-2 h-4/5 my-auto rounded-md  ${!isAnual ? "bg-amber-900 text-white" : "bg-gray-100 text-amber-900"} ` }
+     onClick={()=> {
+        setIsAnual(false)
+
+    }}
+    >Mensal</button>
+</div>
+<div className="sm:w-4/5 mt-2 md:w-2/5 h-24 mx-auto border border-gray-400 flex justify-around rounded-md">
+    <button className={`p-2  w-1/2  sm:w-1/2 mx-2 h-4/5 my-auto rounded-md  ${isGraos ? "bg-amber-900 text-white" : "bg-gray-100 text-amber-900"} `}
+     onClick={()=> {
+        setIsGraos(true)
+    }}>Grãos</button>
+    <button className={`p-2  w-1/2  sm:w-1/2 mx-2 h-4/5 my-auto rounded-md  ${!isGraos ? "bg-amber-900 text-white" : "bg-gray-100 text-amber-900"} ` }
+     onClick={()=> {
+        setIsGraos(false)
+    }}>Moido</button>
+</div>
+
                 <div className='mt-16 space-y-6 justify-center gap-6 sm:grid sm:grid-cols-2 sm:space-y-0 lg:grid-cols-3'>
                     {
-                        signatures?.map((item: any, idx: any) => {
+                        signature2?.map((item: any, idx: any) => {
                             console.log(plans)
                             
                             return(

@@ -6,12 +6,10 @@ import api from '../api';
 const Price = (props: {item: any, idx: any}) => {
     const [isAnual, setIsAnual] = useState(true);
   const [isGraos, setIsGraos] = useState(false);
-
+ 
     const {item, idx} = props
 
     function checkout(){
-    localStorage.setItem("isAnual", isAnual.toString())
-    localStorage.setItem("isGraos", isGraos.toString())
 
 
     window.location.href = "/checkout/"+item.id
@@ -27,22 +25,15 @@ const Price = (props: {item: any, idx: any}) => {
         <span className='text-amber-900 font-medium'>
             {item?.title}
         </span>
+        <img src={item.image} alt="" />
         <div className='mt-4 text-gray-800 text-3xl font-semibold'>
-            R${item?.price.toFixed(2).replace(".",",")} <span className="text-xl text-gray-600 font-normal">/mês</span>
+            R$
+            {
+             item?.priceAnual ? item?.priceAnual?.toFixed(2).replace(".",",") :
+            item?.price.toFixed(2).replace(".",",")} <span className="text-xl text-gray-600 font-normal">/mês</span>
         </div>
         
-        <label className="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" onChange={(e:any) => {setIsGraos(!isGraos);e.target.checked = isGraos}}  className="sr-only peer" id="moido" />
-             <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-            <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">{isGraos ? "Grãos": "Moido"}</span>
-            </label>
-    <br />
-            <label className="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" onChange={(e:any) => {setIsAnual(!isAnual);e.target.checked = isAnual}}  className="sr-only peer" id="moido" />
-             <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-            <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">{isAnual ? "Anual": "Mensal"}</span>
-            </label>
-
+        
 
     </div>
     <ul className='py-8 space-y-3'>

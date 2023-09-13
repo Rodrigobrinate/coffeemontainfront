@@ -44,7 +44,7 @@ const handleSubmit = (e: any) => {
   toast.success('Cadastro realizado com sucesso!');
   window.location.href = '/home';
 }).catch((err) => {
-  console.log(err);
+  console.log(err.message);
   toast.error(err.response.data.message);
 })
 }

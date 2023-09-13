@@ -2,15 +2,26 @@ import React, { useEffect, useState } from "react";
 import Header from "@/components/header/index";
 
 //import { Container } from './styles';
-import styles from "./styles.module.css";
+import styles from "../styles.module.css";
 import api from "@/components/api";
 import { toast } from "react-toastify";
 import { colors } from "@mui/material";
 import { features } from "process";
 import Footer from "@/components/Footer/index";
+import Price from "@/components/Prices/index"
+import Faq from "@/components/Faq";
 
 // You can also use <link> for styles
 // ..
+
+
+declare global {
+    namespace JSX {
+      interface IntrinsicElements {
+        'stripe-pricing-table': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+      }
+    }
+  }
 
 const Signature = () => {
   const [signatures, setSignatures] = React.useState([]) as any;
@@ -18,11 +29,14 @@ const Signature = () => {
   const [isGraos, setIsGraos] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem("isAnual", isAnual.toString());
-    localStorage.setItem("isGraos", isGraos.toString());
-  }, [isAnual, isGraos]);
+    localStorage.setItem("isAnual", isAnual.toString())
+    localStorage.setItem("isGraos", isGraos.toString())
+
+  }, [isAnual, isGraos])
 
   useEffect(() => {
+
+
     api
       .get("/signature")
       .then((response) => {
@@ -48,25 +62,24 @@ const Signature = () => {
       });
   }
 
-  return (
+  return ( 
     <div className={styles.container}>
       <Header />
 
       <div className={styles.section_1}>
         <div className={styles.section_1_first}>
-          <h2 className={styles.title}>
+          <h2 className={styles.title+ ' text-3xl'}>
             Transformando a rotina em um momento de prazer
           </h2>
-      
-          <p className={styles.description}>
+          <p className={styles.description+ "text-sm text-gray-400"}>
             levamos o café dos sonhos até a sua porta, tornando cada manhã uma
             experiência de comodidade e sabor.
           </p>
         </div>
 
         <div className={styles.section_1_first}>
-          <div className={styles.center_img}>
-            <img src="background.png" width={"100%"} alt="" />
+          <div className={`${styles.center_img}`}>
+          <img src="background.png" width={"100%"} alt="" />
           </div>
         </div>
 
@@ -85,7 +98,7 @@ const Signature = () => {
           <div className={styles.plan_info}>
             <img className={styles.plan_image} src="Gurmet.png" alt="" />
             <div className={styles.info}>
-              <h4>Gurmet</h4>
+              <h4 className="">Gurmet</h4>
               <p className={styles.description}>
                 Uma combinação perfeita de qualidade e sabor. Grãos premium
                 selecionados para uma experiência sofisticada e encorpada,
@@ -112,103 +125,15 @@ const Signature = () => {
 
       <h1 className={styles.frase}>Conheça nossos planos</h1>
 
+    <div id="price">
+      <Price  signatures={signatures} />
+
+</div>
       <div className={styles.plans}>
-        {signatures?.map((signature: any, i: number) => {
-          return (
-            <>
-              <div key={signature.id} className={styles.plan} style={{}}>
-                {" "}
-                {i == 1 ? <div className={styles.best}>Mais escolido</div> : ""}
-                <img
-                  className={styles.img_plan}
-                  src={signature.title + ".png"}
-                  alt=""
-                />
-                <h1 className={styles.h1}>{signature.title}</h1>
-                <ul className={styles.features}>
-                  {signature?.fatures.map((fature: any) => {
-                    return (
-                      <li className={styles.feature} key={fature.id}>
-                        {fature.name}
-                      </li>
-                    );
-                  })}
-                </ul>
-                <div className={styles.switch}>
-                  <input
-                    type="checkbox"
-                    hidden
-                    name=""
-                    id="anual"
-                    onChange={() => {
-                      setIsAnual(!isAnual);
-                    }}
-                  />
-                  <div
-                    className={styles.option}
-                    
-                    style={{
-                      background: isAnual ? "#93522E" : "#fff",
-                      color: !isAnual ? "#93522E" : "#fff",
-                    }}
-                  >
-                    <label className={styles.switch_label}  htmlFor="anual">Anual</label>
-                  </div>
-                  <div
-                    className={styles.option}
-                    style={{
-                      background: !isAnual ? "#93522E" : "#fff",
-                      color: isAnual ? "#93522E" : "#fff",
-                    }}
-                  >
-                    <label className={styles.switch_label} htmlFor="anual">Mensal</label>
-                  </div>
-                </div>
-                <div className={styles.switch}>
-                  <input
-                    type="checkbox"
-                    hidden
-                    name=""
-                    id="moido"
-                    onChange={() => {
-                      setIsGraos(!isGraos);
-                    }}
-                  />
-                  <div
-                    className={styles.option}
-                    
-                    style={{
-                      background: isGraos ? "#93522E" : "#fff",
-                      color: !isGraos ? "#93522E" : "#fff",
-                    }}
-                  >
-                    <label className={styles.switch_label} htmlFor="moido">Grãos</label>
-                  </div>
-                  <div
-                    className={styles.option}
-                    style={{
-                      background: !isGraos ? "#93522E" : "#fff",
-                      color: isGraos ? "#93522E" : "#fff",
-                    }}
-                  >
-                    <label className={styles.switch_label} htmlFor="moido">Moido</label>
-                  </div>
-                </div>
-                <h1 className={styles.price_discount}>
-                  R$ {signature.price.toFixed(2).replace(".", ",")}
-                </h1>
-                <button
-                  className={styles.button}
-                  onClick={() => {
-                    window.location.href = "/checkout/" + signature.id;
-                  }}
-                >
-                  Assinar
-                </button>
-              </div>
-            </>
-          );
-        })}
+      <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+<stripe-pricing-table pricing-table-id="prctbl_1NXkunL32bQksmeRUwZAqoa8"
+publishable-key="pk_live_51NKhGmL32bQksmeRpy39cg6vcL9S0kSWe9nxQ5jd1OzQx1A7Fc8bN9uqrNY5PGiz0W268w677dlQeFUx07MuyEY800tAXv27Rm">
+</stripe-pricing-table>
       </div>
 
       <section className={styles.section} data-aos="fade-left">
@@ -225,7 +150,7 @@ const Signature = () => {
       </section>
 
       <section className={styles.section} data-aos="fade-up">
-        <div className={styles.section_text}>
+        <div className={styles.section_text} >
           <h2 className={styles.section_title}>Sinta a energia</h2>
 
           <p className={styles.section_description}>
@@ -261,6 +186,14 @@ const Signature = () => {
           </p>
         </div>
       </section>
+
+
+<Faq />
+
+
+
+
+
 
       <Footer />
     </div>
