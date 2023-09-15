@@ -67,7 +67,7 @@ const Signature = () => {
 
         <div className={styles.section_1_first}>
           <div className={`${styles.center_img}`}>
-            <img src="background.png" width={"100%"} alt="" />
+            <img src="./principal.png" width={"100%"} alt="" />
           </div>
         </div>
 
