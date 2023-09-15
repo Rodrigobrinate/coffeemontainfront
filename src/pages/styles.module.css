@@ -4,6 +4,12 @@ max-width: 100vw !important;
 font-family: 'Poppins', sans-serif !important;
 overflow: hidden;
 scroll-behavior: smooth;
+
+background-size: contain;
+background-image: url("/fundo_teste_2.png");
+background-repeat: repeat-y;
+
+
 }
 
 .section_1 {
@@ -14,6 +20,7 @@ scroll-behavior: smooth;
 
     justify-content: space-between;
     margin-top: 100px;
+   
 
 }
 

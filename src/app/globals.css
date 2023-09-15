@@ -100,6 +100,7 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: #fff !important;
+  background-image: url("/fundo_teste.png");
 }
 
 a {
@@ -109,7 +110,7 @@ a {
 }
 
 a, p, h1, h2, h3, h4, h5, h6, span, button, input, label, select, option, textarea {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Poppins', Arial, sans-serif !important;
 }
 
 
