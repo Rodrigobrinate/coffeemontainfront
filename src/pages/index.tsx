@@ -73,7 +73,7 @@ const Signature = () => {
 
         <div className={styles.section_1_first}>
           <div className={styles.plan_info}>
-            <img className={styles.plan_image} src="./Standard1.png" alt="" />
+            <img className={styles.plan_image} src="./standard1.png" alt="plano standard" />
             <div className={styles.info}>
               <h4 className="font-bold">Standard</h4>
               <p className={styles.description}>
@@ -84,7 +84,7 @@ const Signature = () => {
             </div>
           </div>
           <div className={styles.plan_info}>
-            <img className={styles.plan_image} src="plus.png" alt="" />
+            <img className={styles.plan_image} src="plus.png" alt="plano plus" />
             <div className={styles.info}>
               <h4 className="font-bold">Plus</h4>
               <p className={styles.description}>
@@ -95,7 +95,7 @@ const Signature = () => {
             </div>
           </div>
           <div className={styles.plan_info}>
-            <img className={styles.plan_image} src="Premium1.png" alt="" />
+            <img className={styles.plan_image} src="premium1.png" alt="plano premium" />
             <div className={styles.info}>
               <h4 className="font-bold">Premium</h4>
               <p className={styles.description}>
