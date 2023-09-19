@@ -21,13 +21,14 @@ const Checkout = () => {
   const [city, setCity] = useState("");
   const [country, setContry] = useState("");
   const [cep, setCep] = useState("");
-  const [state, setState] = useState("");
+  //const [state, setState] = useState("");
   const [number, setNumber] = useState("");
   const [neighborhood, setNeighborhood] = useState("");
   const [phoneValid, setphoneValid] = useState(false);
   const [cpfValid, setcpfValid] = useState(false);
   const [frete, setFrete] = useState([]) as any;
   const [freteValue, setFreteValue] = useState([]) as any
+  const [state, setState] = useState("")
 
   const router = useRouter();
   var { id } = router.query;
@@ -61,6 +62,7 @@ const Checkout = () => {
         setCity(response.data?.addresses?.[0]?.city);
         setNeighborhood(response.data?.addresses?.[0]?.neighborhood);
         setCep(response.data?.addresses?.[0].zipCode)
+        setState(response.data?.addresses?.[0].state)
       })
       .catch((err: any) => {
         console.log(err.response);
@@ -93,6 +95,7 @@ const Checkout = () => {
         freteValue,
         isGraos,
         signature,
+        state
       })
       .then((response) => {
         console.log(response);
@@ -261,6 +264,17 @@ const Checkout = () => {
               className={"rounded-md border-gray-300"}
               onChange={(e) => setCity(e.target.value)}
               value={city}
+              type="text"
+            />
+          </span>
+          <span className="flex flex-col w-4/5 md:w-2/5 md:ml-4">
+            <label className={"ml-2 mt-2 text-gray-500 font-bold"} htmlFor="">
+              Estado
+            </label>
+            <input
+              className={"rounded-md border-gray-300"}
+              onChange={(e) => setState(e.target.value)}
+              value={state}
               type="text"
             />
           </span>

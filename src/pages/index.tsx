@@ -59,7 +59,7 @@ const Signature = () => {
           <h2 className={styles.title + " text-3xl"}>
             Transformando a rotina em um momento de prazer
           </h2>
-          <p className={styles.description + "text-sm text-gray-400"}>
+          <p className={styles.description + "text-sm text-gray-900 "}>
             levamos o café dos sonhos até a sua porta, tornando cada manhã uma
             experiência de comodidade e sabor.
           </p>
@@ -73,9 +73,9 @@ const Signature = () => {
 
         <div className={styles.section_1_first}>
           <div className={styles.plan_info}>
-            <img className={styles.plan_image} src="./Standard.png" alt="" />
+            <img className={styles.plan_image} src="./Standard1.png" alt="" />
             <div className={styles.info}>
-              <h4>Standard</h4>
+              <h4 className="font-bold">Standard</h4>
               <p className={styles.description}>
                 Café de qualidade excepcional a um preço acessível. Desfrute de
                 sabores envolventes e aromas marcantes com a conveniência de
@@ -84,9 +84,9 @@ const Signature = () => {
             </div>
           </div>
           <div className={styles.plan_info}>
-            <img className={styles.plan_image} src="Gurmet.png" alt="" />
+            <img className={styles.plan_image} src="plus.png" alt="" />
             <div className={styles.info}>
-              <h4 className="">Gurmet</h4>
+              <h4 className="font-bold">Plus</h4>
               <p className={styles.description}>
                 Uma combinação perfeita de qualidade e sabor. Grãos premium
                 selecionados para uma experiência sofisticada e encorpada,
@@ -95,9 +95,9 @@ const Signature = () => {
             </div>
           </div>
           <div className={styles.plan_info}>
-            <img className={styles.plan_image} src="Premium.png" alt="" />
+            <img className={styles.plan_image} src="Premium1.png" alt="" />
             <div className={styles.info}>
-              <h4>Premium</h4>
+              <h4 className="font-bold">Premium</h4>
               <p className={styles.description}>
                 A escolha dos verdadeiros amantes de café. Grãos exclusivos,
                 torra artesanal e o dobro da quantidade para garantir que você

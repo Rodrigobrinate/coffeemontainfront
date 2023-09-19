@@ -20,12 +20,12 @@ const Price = (props: {item: any, idx: any}) => {
 
 
   return (
-    <div key={idx} className='relative flex-1 flex items-stretch flex-col p-8 rounded-xl border-2'>
+    <div key={idx} className='relative flex-1 flex items-stretch flex-col p-8 rounded-xl border-2 ' style={{backgroundColor: "rgba(255, 255, 255, 0.8)"}}>
     <div>
         <span className='text-amber-900 font-medium'>
             {item?.title}
         </span>
-        <img src={item.image} alt="" />
+        <img src={item.image} className='rounded-xl' alt="" />
         <div className='mt-4 text-gray-800 text-3xl font-semibold'>
             R$
             {

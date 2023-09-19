@@ -66,16 +66,18 @@ const [signature2, setsignature2 ]= useState(signatures.filter((item: any) => it
     //console.log(signatures.filter((item: any) =>  item.isMoido == true))
     console.log(isAnual, isGraos,signatures.filter((item: any) => item.isAnual == true && item.isMoido == true))
     if (isAnual && isGraos){
-        setsignature2(signatures.filter((item: any) => item.isAnual == true && item.isMoido == false))
+        let sig = signatures.filter((item: any) => item.isAnual == true && item.isMoido == false)
+        sig = sig.sort((a:any, b:any) => a.price - b.price)
+        setsignature2(sig)
     } 
     else if (isAnual && !isGraos){
-        setsignature2(signatures.filter((item: any) => item.isAnual == true && item.isMoido == true))
+        setsignature2(signatures.filter((item: any) => item.isAnual == true && item.isMoido == true).sort((a:any, b:any) => a.price - b.price))
     }
     else if (!isAnual && isGraos){
-        setsignature2(signatures.filter((item: any) => item.isAnual == false && item.isMoido == false))
+        setsignature2(signatures.filter((item: any) => item.isAnual == false && item.isMoido == false).sort((a:any, b:any) => a.price - b.price))
     }
     else if (!isAnual && !isGraos){
-        setsignature2(signatures.filter((item: any) => item.isAnual == false && item.isMoido == true))
+        setsignature2(signatures.filter((item: any) => item.isAnual == false && item.isMoido == true).sort((a:any, b:any) => a.price - b.price))
     }}
 
 
