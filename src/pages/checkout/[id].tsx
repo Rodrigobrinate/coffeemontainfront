@@ -156,7 +156,7 @@ const Checkout = () => {
               setFreteValue(item)
             }} className="mr-2" id={item.id} />
             <label htmlFor={item.id}>
-              {item.name}: R$ {item?.price?.replace(".", ",")}
+              {item.name}: R$ {item?.price < 1 ? "Frete Gratis" : item?.price?.replace(".", ",")}
               <br /> Prazo: até {item?.delivery_range?.max} dias úteis
               <br />
             </label>

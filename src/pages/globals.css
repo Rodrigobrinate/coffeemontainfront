@@ -105,6 +105,8 @@ body {
 }
 
 
+
+
 *{
   font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
 }
@@ -116,6 +118,10 @@ a {
 
 a, p, h1, h2, h3, h4, h5, h6, span, button, input, label, select, option, textarea {
   font-family: 'Poppins', sans-serif !important;
+}
+
+input {
+  color: black;
 }
 
 
