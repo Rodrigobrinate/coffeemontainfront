@@ -98,7 +98,7 @@ const Signature = () => {
             <img className={styles.plan_image} src="premium1.png" alt="plano premium" />
             <div className={styles.info}>
               <h4 className="font-bold">Premium</h4>
-              <p className={styles.description}>
+              <p className={styles.description }>
                 A escolha dos verdadeiros amantes de café. Grãos exclusivos,
                 torra artesanal e o dobro da quantidade para garantir que você
                 nunca fique sem. Uma experiência supremamente satisfatória,
