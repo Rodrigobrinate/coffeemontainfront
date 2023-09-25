@@ -125,7 +125,7 @@ export default function Header()  {
                         </div>
                     </div>
                     <div className={`nav-menu flex-1 pb-3 mt-8 md:block md:pb-0 md:mt-0 ${state ? 'block' : 'hidden'}`}>
-                        <ul className="items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
+                        <ul className="items-center space-y-6 md:flex md:space-x-6 md:space-y-0 bg-white">
                             {
                                 navigation.map((item: any, idx: any) => {
                                     return (
@@ -157,7 +157,7 @@ export default function Header()  {
                                             }
                                             {
                                                 item.isDrapdown && drapdownState.idx == idx && drapdownState.isActive ? (
-                                                    <div className="mt-6 inset-x-0 top-20 w-full md:absolute md:border-y md:shadow-md md:mt-0">
+                                                    <div className="mt-6 bg-white inset-x-0 top-20 w-full md:absolute md:border-y md:shadow-md md:mt-0">
                                                         <ul className='max-w-screen-xl z-50 bg-white mx-auto grid items-center gap-6 md:p-8 md:grid-cols-2 lg:grid-cols-3'>
                                                             {item?.navs.map((dropdownItem: any, idx: any) => (
                                                                 <li key={idx}>
