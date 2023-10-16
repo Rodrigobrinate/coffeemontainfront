@@ -8,9 +8,9 @@ if (typeof window !== 'undefined') {
   token = localStorage.getItem('token')
   }
 
-  const protocol = process.env.PROTOCOL
-  const host = process.env.HOST
-  const port = process.env.PORT
+  const protocol = process.env.PROTOCOL || 'http'
+  const host = process.env.HOST || "localhost"
+  const port = process.env.PORT || '3000'
 
 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
