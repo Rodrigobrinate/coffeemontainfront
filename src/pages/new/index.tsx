@@ -77,9 +77,9 @@ const New = () => {
         </div>
       </Carousel>
 
-      <div className="w-2/5 mx-auto mt-8 text-red-950">
+      <div className="w-4/5 md:w-3/5 mx-auto mt-8 text-red-950">
         <h1 className="text-center text-3xl font-bold">Como funciona?</h1>
-        <p className="mt-2 text-xl text-justify">
+        <p className="mt-2 text-md md:text-xl text-justify">
           você escolhe seu plano, e nossa equipe de especialista irão selecionar
           os melhores cafés para lhe atender, dessa forma você receberá seu
           pacote de café especial todo mes em seu endereço, sem preucpação
