@@ -29,19 +29,19 @@ const New = () => {
 
   const av = [
     {
-      name: "Rodrigo B. Protazio", 
+      name: "Fernando B. Rodrigues", 
       img: "people.png", 
-      description: "Lorem Ipsum is simply dummy text of the printing and typesettin industry. Lorem Ipsum has been the industry's standard dummy textever since the 1500s, when an unknown printer took a galley oftype and scrambled it to make a type specimen book."
+      description: "Estou absolutamente encantado com o serviço de assinatura mensal de café do Coffee Mountain Caparaó. A qualidade dos grãos é impressionante, a variedade é incrível e a entrega é sempre pontual. Cada xícara é uma experiência sensorial maravilhosa. Se você é um amante de café, não hesite em experimentar este serviço. Você não vai se arrepender!"
     },
     {
-      name: "Rodrigo B. Protazio", 
-      img: "people.png", 
-      description: "Lorem Ipsum is simply dummy text of the printing and typesettin industry. Lorem Ipsum has been the industry's standard dummy textever since the 1500s, when an unknown printer took a galley oftype and scrambled it to make a type specimen book."
+      name: "Daniela R. Silva", 
+      img: "./people2.png", 
+      description: "Estou absolutamente maravilhado com o serviço de assinatura mensal de café do Coffee Mountain Caparaó. A qualidade dos grãos é surpreendente, a variedade disponível é fenomenal e a entrega é sempre realizada pontualmente. Cada xícara é uma experiência sensorial verdadeiramente espetacular. Se você é um verdadeiro entusiasta de café, não pense duas vezes antes de experimentar este serviço. Tenho certeza de que não ficará desapontado!"
     },
     {
-      name: "Rodrigo B. Protazio", 
-      img: "people.png", 
-      description: "Lorem Ipsum is simply dummy text of the printing and typesettin industry. Lorem Ipsum has been the industry's standard dummy textever since the 1500s, when an unknown printer took a galley oftype and scrambled it to make a type specimen book."
+      name: "Antonio P. Costa", 
+      img: "people3.png", 
+      description: "Tenho o prazer de expressar minha absoluta satisfação com o serviço de assinatura mensal de café do Coffee Mountain Caparaó. A qualidade excepcional dos grãos, a impressionante variedade de opções e a entrega sempre pontual fazem deste serviço uma experiência sensorial inigualável. Se você é um verdadeiro amante de café, não hesite em experimentar este serviço. Garanto que não ficará desapontado!"
     }
   ]
 
