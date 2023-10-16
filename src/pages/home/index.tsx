@@ -77,7 +77,7 @@ const New = () => {
         </div>
       </Carousel>
 
-      <div className="w-3/5 mx-auto mt-8 text-red-950">
+      <div className="w-2/5 mx-auto mt-8 text-red-950">
         <h1 className="text-center text-3xl font-bold">Como funciona?</h1>
         <p className="mt-2 text-xl text-justify">
           você escolhe seu plano, e nossa equipe de especialista irão selecionar
@@ -96,9 +96,9 @@ const New = () => {
 
         <ul className="w-4/5 mx-auto block md:flex justify-between">
 
-          {av.map((item) => {
+          {av.map((item,i) => {
             return (
-              <li className="px-2 py-2 mt-4  md:w-1/3  border ml-2 rounded-md">
+              <li key={i} className="px-2 py-2 mt-4  md:w-1/3  border ml-2 rounded-md">
             <span className="flex items-center px-4">
               <img
                 className="w-16 h-16 rounded-full inline"
