@@ -86,7 +86,7 @@ const Price = (props: { item: any; idx: any }) => {
         </div>
       </div>
 
-      {isGraos.toString()}
+     
 
       <ul className="py-8 space-y-3">
         {item?.fatures?.map((featureItem: any, idx: any) => (
