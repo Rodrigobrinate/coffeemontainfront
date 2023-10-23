@@ -18,7 +18,7 @@ export default function Table() {
 
   useEffect(() => {
     api
-      .get("/signature")
+      .get("/signature/admin")
       .then((response) => {
         setSignatures(response.data);
       })
