@@ -1,5 +1,5 @@
 .container_page {
-  background-color: #e6e5e5;
+  background-color: #fafafa;
   width: 100%;
   min-height: 100vh;
 }
@@ -86,7 +86,7 @@ margin-bottom: 10px;
 
 .validation_item {
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 
