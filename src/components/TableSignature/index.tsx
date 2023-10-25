@@ -205,12 +205,12 @@ console.log(isAnual, name, price)
         <table className="w-full table-auto text-sm text-left">
           <thead className="text-gray-600 font-medium border-b">
             <tr>
-              <th className="py-3 pr-6">name</th>
+              <th className="py-3 pr-6">Nome</th>
               <th className="py-3 pr-6">Image</th>
               <th className="py-3 pr-6">graões</th>
-              <th className="py-3 pr-6">status</th>
-              <th className="py-3 pr-6">price</th>
-              <th className="py-3 pr-6"></th>
+              <th className="py-3 pr-6">Recorrência</th>
+              <th className="py-3 pr-6">Preço</th>
+              <th className="py-3 pr-6">gerenciamento</th>
             </tr>
           </thead>
           {modal}
@@ -299,9 +299,10 @@ console.log(isAnual, name, price)
                           };
                           return updateSignatures;
                         });
+                        console.log(e.target.value)
                         updateSignature(item.id, {
-                          ...item,
-                          isAnual: e.target.value,
+                        ...item, 
+                          isAnual: e.target.value == "true" ? true : false, 
                         });
                       }}
                     className="w-full p-1 ml-3 text-gray-500 outline-none  border-none bg-transparent " id="">
