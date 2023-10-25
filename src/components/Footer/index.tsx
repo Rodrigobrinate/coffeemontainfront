@@ -13,10 +13,7 @@ export default function Footer2() {
           href: "https://medium.com/@coffeemountaincaparao",
           name: "Blog",
         },
-        {
-          href: "/Time",
-          name: "Time",
-        }
+        
       ],
     },
     {
@@ -29,10 +26,6 @@ export default function Footer2() {
         {
           href: "/contato",
           name: "Suporte",
-        },
-        {
-          href: "#price",
-          name: "Preços",
         },
         {
           href: "/about",
@@ -50,7 +43,7 @@ export default function Footer2() {
         
         {
           href: "/privacity",
-          name: "privacidade",
+          name: "Privacidade",
         },
         {
           href: "/about",
@@ -67,22 +60,10 @@ export default function Footer2() {
           <div className="max-w-xs">
             <img src="/logo_main.png" alt="logo" className="w-16" />
             <p className="leading-relaxed mt-2 text-[15px]">
-              Proporcionando o melhor café do Brazil diretamente em seu endereço
+              Proporcionando o melhor café do Brasil diretamente em seu endereço
             </p>
           </div>
-          <form onSubmit={(e) => e.preventDefault()}>
-            <label className="block pt-4 pb-2">Receba atualizações</label>
-            <div className="max-w-sm flex items-center border rounded-md p-1">
-              <input
-                type="email"
-                placeholder="Digite seu Email"
-                className="w-full p-2.5 outline-none"
-              />
-              <button className="p-2.5 rounded-md text-white bg-amber-900 outline-none shadow-md focus:shadow-none sm:px-5">
-                Inscrever
-              </button>
-            </div>
-          </form>
+         
         </div>
         <div className="flex-1 mt-10 space-y-6 items-center justify-between sm:flex md:space-y-0 md:mt-0">
           {footerNavs.map((item, idx) => (
