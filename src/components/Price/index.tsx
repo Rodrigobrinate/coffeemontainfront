@@ -113,7 +113,7 @@ const Price = (props: { item: any; idx: any }) => {
         ) : (
           <div className="flex justify-center text-amber-900">
             R$
-            <p className="text-amber-900"> {item?.price.toFixed(0).replace(".", ",")} </p>
+            <p className="text-amber-900"> {item?.price?.toString().split(".")[0].replace(".", ",")} </p>
             <sup className="text-base text-amber-900">
               ,{item?.price.toFixed(2).toString().split(".")[1]}/Mês
             </sup>
