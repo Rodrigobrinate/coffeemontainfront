@@ -90,7 +90,7 @@ const Price = (props: { item: any; idx: any }) => {
 
       <ul className="py-8 space-y-3">
         {item?.fatures?.map((featureItem: any, idx: any) => (
-          <li key={idx} className="flex items-center gap-5">
+          <li key={idx} className="flex items-center gap-5 text-amber-900">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 text-amber-900"
@@ -111,10 +111,10 @@ const Price = (props: { item: any; idx: any }) => {
         {item?.priceAnual ? (
           item?.priceAnual?.toFixed(0).replace(".", ",")
         ) : (
-          <div className="flex justify-center">
+          <div className="flex justify-center text-amber-900">
             R$
-            <p> {item?.price.toFixed(0).replace(".", ",")} </p>
-            <sup className="text-base">
+            <p className="text-amber-900"> {item?.price.toFixed(0).replace(".", ",")} </p>
+            <sup className="text-base text-amber-900">
               ,{item?.price.toFixed(2).toString().split(".")[1]}/Mês
             </sup>
           </div>

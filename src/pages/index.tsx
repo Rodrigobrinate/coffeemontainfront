@@ -78,8 +78,8 @@ const New = () => {
       </Carousel>
 
       <div className="w-4/5 md:w-3/5 mx-auto mt-8 text-red-950">
-        <h1 className="text-center text-3xl font-bold">Como funciona?</h1>
-        <p className="mt-2 text-md md:text-xl text-justify">
+        <h1 className="text-center text-3xl font-bold text-amber-900">Como funciona?</h1>
+        <p className="mt-2 text-md md:text-xl text-justify text-amber-900">
           você escolhe seu plano, e nossa equipe de especialista irão selecionar
           os melhores cafés para lhe atender, dessa forma você receberá seu
           pacote de café especial todo mes em seu endereço, sem preucpação
@@ -87,7 +87,7 @@ const New = () => {
       </div>
 
       <div className="mt-20 text-red-950">
-        <h1 className="text-center text-3xl font-bold">Nossos planos</h1>
+        <h1 className="text-center text-3xl font-bold text-amber-900">Nossos planos</h1>
         <Prices signatures={signatures} />
       </div>
 
@@ -107,11 +107,11 @@ const New = () => {
               />
               <h2 className="ml-2 font-bold">{item.name}</h2>{" "}
             </span>
-            <Star color="warning" />
-            <Star color="warning" />
-            <Star color="warning" />
-            <Star color="warning" />
-            <Star color="warning" />
+            <img width="28" className="inline" height="28" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
+            <img width="28" className="inline" height="28" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
+            <img width="28" className="inline" height="28" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
+            <img width="28" className="inline" height="28" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
+            <img width="28" className="inline" height="28" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
               &nbsp; 5.0
             <p className="text-gray-600">
               {item.description}
