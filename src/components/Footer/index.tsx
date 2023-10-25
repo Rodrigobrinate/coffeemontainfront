@@ -121,7 +121,11 @@ export default function Footer2() {
               <img width="48" height="48" src="https://img.icons8.com/color/48/email.png" alt="email"/>
               </Link>
             </li>
-
+            <li className="w-10 h-10 border rounded-full flex items-center justify-center">
+              <Link href="javascript:void(0)">
+              <img width="48" height="48" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1"/>
+              </Link>
+            </li>
           
           </ul>
         </div>
